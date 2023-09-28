@@ -6,7 +6,8 @@ const options = {
     }
   };
   const title=document.querySelector('#title')
-  fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=3', options)
+
+const fetchMovies=(numPage=1)=>{ fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=${numPage}`, options)
     .then(response => response.json())
     .then(data => 
        { console.log(data)
@@ -18,5 +19,6 @@ const options = {
                 }
         )
     .catch(err => console.error(err));
-
+}
+fetchMovies(4)
     
