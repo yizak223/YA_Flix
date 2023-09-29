@@ -1,3 +1,27 @@
+body{
+    display: grid;
+    grid-template-areas: 
+    'header header header header'
+    'main main main main'
+    'main main main main'
+    'main main main main'
+    'footer footer footer footer';
+}
+header{
+    grid-area: header;
+    position: sticky;
+    top: 0;
+}
+main{
+    grid-area: main;
+}
+footer{
+    grid-area: footer;
+}
+.nav{
+    /* display: flex; */
+    justify-content: space-evenly;
+}
 img{
     width: 20vw;
 }
