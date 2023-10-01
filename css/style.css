@@ -54,6 +54,12 @@ main{
     align-items: center;
 
 }
+.love{
+    color: rgb(255, 0, 0);
+}
+.userLiked{
+    background-color: #002aff;
+}
 footer{
     grid-area: footer;
 }
@@ -65,7 +71,7 @@ footer{
     
 }
 img{
-    width: 12vw;
+    width: 15vw;
     height: 30vh;
     border-radius: 0.5rem;
     box-shadow: rgb(255 255 255 / 10%) 12px 13px 25px -6px;
