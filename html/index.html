@@ -18,16 +18,36 @@
             <a class="nav-link" href="/html/singleMovie.html">Movie</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="../html/Aboout.html">About</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                <a class="nav-link" href="../html/searchMovie.html">Search movie</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../html/Favourite.html">Favourite</a>
+            </li>
+            <!-- <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li> -->
         </ul>
     </header>
     <main>
         <div id="mainMovie"></div>
+        <form >
+            <input id="setDay"  name="trending" type="radio" checked>day
+            <input id="setWeek" name="trending" type="radio">week
+        </form>
+      
         <div id="moviesList"></div>
+        
+        <div id="btnPage">
+            <button class="paginationBtn">1</button>
+            <button class="paginationBtn">2</button>
+            <button class="paginationBtn">3</button>
+            <button class="paginationBtn">4</button>
+            <button class="paginationBtn">5</button>
+            <input type="number" id="inptPage">
+        </div>
     </main>
     <footer>
 
