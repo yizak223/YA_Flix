@@ -9,12 +9,40 @@ const MOVIE_ID_FETCH = (movie_id = 11) => {
             console.log(movieData)
             BACKG_IMG.innerHTML += `<img id='backgImg' src='http://image.tmdb.org/t/p/w500${movieData.backdrop_path}'>`
             MOVIE_ID_CONTAINER.innerHTML += `<div id='containerMovie'> 
-                                                <div id='contentContainer'>
-                                                    <h1>${movieData.original_title}</h1>
-                                                    <span>Year: ${movieData.release_date.substring(0,4)}</span> | Time: ${movieData.runtime}minutes
-                                                </div>
+                                                    <div id='containerContent'>
+                                                        <div id='secContainerContent'>
+                                                            <div id='titleContainer'>
+                                                                <h1>${movieData.original_title}</h1>
+                                                                <span>Year: ${movieData.release_date.substring(0,4)}</span> | Time: ${movieData.runtime}minutes
+                                                            </div>
+                                                            <div id='paragrphContainer'> 
+                                                                <span>Directed By: ${movieData.credits.crew[0].name}</span>
+                                                            </div>
+                                                            <br>
+                                                            <h6>${movieData.overview}</h6>
+                                                            <div id='containerTrailer'></div>
+                                                        </div>
+                                                    </div>    
                                                 <img src='http://image.tmdb.org/t/p/w500${movieData.poster_path}'>
                                             </div>`
         })
 }
+const OPTIONS = {
+    method: 'GET',
+    headers: {
+      accept: ' application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNDMwZDdkNmE3NWVmMjUzYjE3MWQxMzE0ZTNiOGY4ZiIsInN1YiI6IjY1MTViNTEwOTNiZDY5MDEzOGZjNjFjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DnXvPBDGXfiOwqal9-lzl2zqjV-mLbJGJhCTg3gX7Vo'
+    }
+  };
+const TRAILER_FETCH=(movie_id=11)=>{
+    fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos?language=en-US`,OPTIONS)
+    .then(response => response.json())
+    .then(trailer=>{
+        console.log(trailer)
+        containerTrailer.innerHTML+=` <iframe width="550" height="315" src="https://www.youtube.com/embed/${trailer.results[0].key}" frameborder="0" allowfullscreen></iframe>
+        `
+    })
+}
+
 MOVIE_ID_FETCH()
+TRAILER_FETCH()

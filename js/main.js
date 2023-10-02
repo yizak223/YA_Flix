@@ -9,7 +9,7 @@ const MAIN_MOVIE=document.querySelector('#mainMovie')
 const MOVIE_LIST = document.querySelector('#moviesList')
 const favourite_movies=[]
 const FETCH_MOVIES = (numPage = 1, time = `day`) => {
-  fetch(`https://api.themoviedb.org/3/trending/movie/${time}?language=en-US&page=${numPage}`)
+  fetch(`https://api.themoviedb.org/3/trending/movie/${time}?language=en-US&page=${numPage}`,OPTIONS)
     .then(response => response.json())
     .then(data => {
       console.log(data)
