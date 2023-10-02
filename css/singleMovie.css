@@ -2,10 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    
 }
 #containerContent{
     width: 70%;
-    
 }
 #containerPage{
     height: 150vh;
@@ -30,7 +30,11 @@
     align-items: center;
     justify-content: space-around;
 }
-
+#wrongId h1{
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #00000089;
+}
 #containerMovie{
     background-color: rgba(95, 94, 92, 0.357);
     display: flex;
@@ -44,7 +48,7 @@
     margin-top: 2rem;
 }
 #secContainerContent{
-      margin-left: 2rem;
+    margin-left: 2rem;
     padding-bottom: 2rem;
     margin-right: 2rem;
 }
@@ -102,11 +106,40 @@ iframe{
     gap: 1rem;
     
 }
+#searchElementContainer{
+  
+}
+#containerPageBeforeMovie{
+    margin-top: 5rem;
+    position: absolute;
+    z-index: 100;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #93d3e893;
+}
+#RELAXspan{
+    color: rgb(41, 249, 249);
+}
 #searchContainer{
-    height: 6vh;
+    height: 10vh;
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
+    border-radius: 15px;
+}
+#searchBTN{
+    height: 7vh;
+    width: 10vw;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(55, 134, 252);
+    color: #fff;
+}
+#idMovieUser{
+    border: none;
+    width: 80vw;
+    height: 7vh;
+    border-radius: 10px;
 }
 #containerActors{
     display: flex;
@@ -138,6 +171,8 @@ iframe{
 .cardActor p{
     color: rgb(55, 134, 252);
 }
+
+
 
 
 

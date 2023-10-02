@@ -57,7 +57,6 @@ section{
     background-image: url('https://img.mako.co.il/2018/04/15/shutterstock15_04_18540015799_i.jpg') ;  
     background-repeat: no-repeat;
     background-size: cover;
-
     height: 95vh;
     display: flex;
     align-items: center;
@@ -159,7 +158,6 @@ h1{
 }
 .userLiked{
     background-color: #002aff;
-   
 }
 footer{
     grid-area: footer;

@@ -49,7 +49,7 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
             movieData.credits.crew.forEach((actor,i) => {
                 if(i>1){
                     CONTAINER_ACTORS.innerHTML+=`<div class='cardActor'>
-                                            <div class='containerImg'><img class='profileActor' src='http://image.tmdb.org/t/p/w500${actor.profile_path}'></div>
+                                            <div class='containerImg'><img class='profileActor' src='http://image.tmdb.org/t/p/w500${actor.profile_path}' onerror="this.src='https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg';"></div>
                                             <p>${actor.name} <br>Role: ${actor.job}</p>
                                            </div> `
                 }
