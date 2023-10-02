@@ -5,6 +5,7 @@ const OPTIONS = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNDMwZDdkNmE3NWVmMjUzYjE3MWQxMzE0ZTNiOGY4ZiIsInN1YiI6IjY1MTViNTEwOTNiZDY5MDEzOGZjNjFjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DnXvPBDGXfiOwqal9-lzl2zqjV-mLbJGJhCTg3gX7Vo'
   }
 };
+const MAIN_MOVIE=document.querySelector('#mainMovie')
 const MOVIE_LIST = document.querySelector('#moviesList')
 const favourite_movies=[]
 const FETCH_MOVIES = (numPage = 1, time = `day`) => {
@@ -13,7 +14,7 @@ const FETCH_MOVIES = (numPage = 1, time = `day`) => {
     .then(data => {
       console.log(data)
       data.results.forEach((movie) => {
-        MOVIE_LIST.innerHTML += `<div class='movieCard'>
+        MOVIE_LIST.innerHTML += `<div class='movieCardList'>
                                 <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}'>
                                 <button class='userLiked'>
                                   <i  class="fa fa-heart" aria-hidden="true"></i>
