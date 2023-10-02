@@ -46,18 +46,18 @@ PAGINTION_BTN.forEach(BTN => {
     numPageUser = BTN.textContent
     FETCH_MOVIES(numPageUser, paginationUser)
     PAGINTION_BTN.forEach((btn) => {
-      btn.classList.remove('clicked');
+      btn.classList.remove('paginationBtnActive');
     })
-    BTN.classList.add('clicked')
+    BTN.classList.add('paginationBtnActive')
   })
 });
 
-const INPT_PAGE = document.querySelector('#inptPage')
-INPT_PAGE.addEventListener('change', () => {
-  MOVIE_LIST.innerHTML = ``
-  numPageUser = INPT_PAGE.value
-  FETCH_MOVIES(numPageUser, paginationUser)
-})
+// const INPT_PAGE = document.querySelector('#inptPage')
+// INPT_PAGE.addEventListener('change', () => {
+//   MOVIE_LIST.innerHTML = ``
+//   numPageUser = INPT_PAGE.value
+//   FETCH_MOVIES(numPageUser, paginationUser)
+// })
 
 const SET_DAY = document.querySelector('#setDay')
 const SET_WEEK = document.querySelector('#setWeek')
@@ -65,25 +65,28 @@ const SET_WEEK = document.querySelector('#setWeek')
 
 
 SET_DAY.addEventListener('click', () => {
-  SET_DAY.style=` background-color: rgb(0, 0, 0);`
+  SET_DAY.classList.add('clickdBTNpopularActive')
+  SET_WEEK.classList.remove('clickdBTNpopularActive')
   MOVIE_LIST.innerHTML = ``
   paginationUser = 'day'
   FETCH_MOVIES(numPageUser, 'day')
   PAGINTION_BTN.forEach((btn) => {
-    btn.classList.remove('clicked');
+    btn.classList.remove('paginationBtnActive');
   })
-  PAGINTION_BTN[numPageUser - 1].classList.add('clicked')
+  PAGINTION_BTN[numPageUser - 1].classList.add('paginationBtnActive')
 
 })
 
 SET_WEEK.addEventListener('click', () => {
+  SET_WEEK.classList.add('clickdBTNpopularActive')
+  SET_DAY.classList.remove('clickdBTNpopularActive')
   MOVIE_LIST.innerHTML = ``
   paginationUser = 'week'
   FETCH_MOVIES(numPageUser, paginationUser)
   PAGINTION_BTN.forEach((btn) => {
-    btn.classList.remove('clicked');
+    btn.classList.remove('paginationBtnActive');
   })
-  PAGINTION_BTN[numPageUser - 1].classList.add('clicked')
+  PAGINTION_BTN[numPageUser - 1].classList.add('paginationBtnActive')
 })
 
 const BTN_SPACE=document.querySelector('#btnSpace')

@@ -30,6 +30,7 @@ header{
     padding-bottom: 5px;
 }
 nav{
+    background-color: #000;
     display: flex;
     align-items: center;
 }
@@ -56,6 +57,7 @@ section{
     background-image: url('https://img.mako.co.il/2018/04/15/shutterstock15_04_18540015799_i.jpg') ;  
     background-repeat: no-repeat;
     background-size: cover;
+
     height: 95vh;
     display: flex;
     align-items: center;
@@ -101,21 +103,33 @@ h1{
     transform: scale(1.1) translateY(-1px);
 }
 #targetElement{
-    height: 5vh;
     text-align: center;
     margin-top: 1rem;
+    color:rgb(55, 134, 252) ;
+}
+#containerMovieListBtnPopularSelect{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    padding-top: 0;
+}
+.btnPopularSelct{
+    /* display: flex; */
+    padding-left: 2rem;
     color:rgb(55, 134, 252) ;
 }
 #moviesList{
     /* width: 100vw; */
     /* height: 60vh; */
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 2rem;
     padding: 2rem;
+    
     background-color: rgb(0, 0, 0);
 }
 .movieCardList p{
@@ -165,8 +179,25 @@ footer{
     gap: 1rem;
 }
 .paginationBtn{
-    background-color: #2f2f2f;
+    padding: 1vh;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(252, 55, 55);
     color: #fff;
+    margin-bottom: 2rem;
+    transition: 0.5s;
+}
+.paginationBtn:hover{
+    background-color: rgb(55, 134, 252);
+    color: #fff;
+}
+.paginationBtnActive{
+    padding: 1vh;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(55, 134, 252);
+    color: #fff;
+    margin-bottom: 2rem;
 }
 .clicked {
     background-color: #ff5733; /* Change this color to the one you prefer */  
@@ -193,4 +224,19 @@ form{
 .userLiked{
     background-color: rgb(55, 134, 252);
     color: rgb(255, 0, 0);
+}
+.clickdBTNpopular{
+    background-color:rgb(255, 0, 0) ;
+    color: rgb(255, 255, 255);
+    padding: 2vh;
+    border-radius: 15px;
+    transition: 0.5s;
+    border: none; 
+}
+.clickdBTNpopular:hover{
+    background-color: #373737;
+}
+.clickdBTNpopularActive{
+    background-color: #373737;
+
 }
