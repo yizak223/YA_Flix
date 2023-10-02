@@ -23,10 +23,18 @@ const MOVIE_ID_FETCH = (movie_id = 11) => {
                                                             <div id='containerTrailer'></div>
                                                         </div>
                                                     </div>    
-                                                <img src='http://image.tmdb.org/t/p/w500${movieData.poster_path}'>
+                                                    <div id='containerImgDetails'>
+                                                        <img src='http://image.tmdb.org/t/p/w500${movieData.poster_path}'>
+                                                        <div id='likeRate'>
+                                                            <span id='rate'>Rate: ${movieData.vote_average} <i class="fa fa-star" aria-hidden="true"></i></span>
+                                                            <button id='likeBtn'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
+                                                        </div>
+                                                    </div>
                                             </div>`
         })
 }
+                                                            // <span>Language: ${movieData.spoken_languages[0].name}</span>
+
 const OPTIONS = {
     method: 'GET',
     headers: {
