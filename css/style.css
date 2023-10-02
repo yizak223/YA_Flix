@@ -140,7 +140,8 @@ h1{
 
 }
 .love{
-    color: rgb(255, 0, 0);
+    background-color: rgb(255, 255, 255);
+    color: rgb(55, 134, 252);
 }
 .userLiked{
     background-color: #002aff;
@@ -174,4 +175,22 @@ footer{
 form{
     display: flex;
     justify-content: center;
+}
+.likeBtn{
+    width: 50%;
+    box-shadow: 1px 1px 1px 1px #000;
+    background-color:rgb(55, 134, 252) ;
+    color: rgb(255, 255, 255);
+    padding: 1vh;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.likeBtn:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(55, 134, 252);
+}
+.userLiked{
+    background-color: rgb(55, 134, 252);
+    color: rgb(255, 0, 0);
 }

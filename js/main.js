@@ -15,25 +15,15 @@ const FETCH_MOVIES = (numPage = 1, time = `day`) => {
       console.log(data)
       data.results.forEach((movie) => {
         MOVIE_LIST.innerHTML += `<div class='movieCardList'>
-                                <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}'>
-                                <button class='userLiked'>
-                                  <i  class="fa fa-heart" aria-hidden="true"></i>
-                                </button>
+                                  <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}'>
+                                  <button class='likeBtn'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
                                 </div>`})
-      const USER_LIKED = document.querySelectorAll('.userLiked')
-      USER_LIKED.forEach((icon,i) => {
-        icon.addEventListener('click',()=>{
-          icon.classList.toggle("love"); 
-          favourite_movies.push(data.results[i].title)
-          if (typeof favourite === 'defined') {
-            localStorage.setItem('favouriteee',JSON.stringify(favourite_movies))
-            
-          } 
-          localStorage.setItem('favourite',JSON.stringify(favourite_movies))
-        })
-        
+      const USER_LIKED = document.querySelectorAll('.likeBtn')
+      USER_LIKED.forEach((btn) => {
+        btn.addEventListener('click',()=>{
+            btn.classList.toggle("userLiked"); 
+        })  
       });
-
     })
     .catch(err => console.error(err));
 }
