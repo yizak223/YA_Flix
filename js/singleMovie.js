@@ -1,10 +1,22 @@
+const OPTIONS = {
+    method: 'GET',
+    headers: {
+        accept: ' application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNDMwZDdkNmE3NWVmMjUzYjE3MWQxMzE0ZTNiOGY4ZiIsInN1YiI6IjY1MTViNTEwOTNiZDY5MDEzOGZjNjFjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DnXvPBDGXfiOwqal9-lzl2zqjV-mLbJGJhCTg3gX7Vo'
+    }
+};
 const MOVIE_ID_CONTAINER = document.querySelector('#movieByIdContainer')
 const BACKG_IMG = document.querySelector('#backgImgContainer')
 
-const MOVIE_ID_FETCH = (movie_id = 11) => {
+const MOVIE_ID_FETCH = (movie_id = 5) => {
     fetch(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=bc1f09cc15ddc7d57d1d665f10e1e5a6&language=en-US&append_to_response=credits`)
         .then(response => response.json())
         .then(movieData => {
+            if(movieData.success==false){
+                BACKG_IMG.innerHTML += `<img id='backgImg' src='https://cdn.w600.comps.canstockphoto.co.il/%D7%91%D7%95%D7%9C-%D7%A9%D7%9C-%D7%92%D7%95%D7%9E%D7%99-%D7%9C%D7%90-%D7%A7%D7%99%D7%99%D7%9D-%D7%A6%D7%99%D7%95%D7%A8_csp40308695.jpg'>`
+                MOVIE_ID_CONTAINER.innerHTML=`<div id='wrongId'><h1>This movie number does not exist</h1>
+                                              <button><h2>Search for another<h2></button></div>`
+            }
             console.log(movieData)
             BACKG_IMG.innerHTML += `<img id='backgImg' src='http://image.tmdb.org/t/p/w500${movieData.backdrop_path}'>`
             MOVIE_ID_CONTAINER.innerHTML += `<div id='containerPage'>
@@ -34,8 +46,14 @@ const MOVIE_ID_FETCH = (movie_id = 11) => {
                                                 <div id="containerActors"></div>
                                             </div>`
             const CONTAINER_ACTORS = document.querySelector('#containerActors')
-            movieData.credits.crew.forEach(actor => {
-                CONTAINER_ACTORS.innerHTML+=`<p>${actor.name}</p>`
+            movieData.credits.crew.forEach((actor,i) => {
+                if(i>1){
+                    CONTAINER_ACTORS.innerHTML+=`<div class='cardActor'>
+                                            <div class='containerImg'><img class='profileActor' src='http://image.tmdb.org/t/p/w500${actor.profile_path}'></div>
+                                            <p>${actor.name} <br>Role: ${actor.job}</p>
+                                           </div> `
+                }
+                
             })
 
             const LIKE_BTNS = document.querySelectorAll('.likeBtn');
@@ -47,26 +65,8 @@ const MOVIE_ID_FETCH = (movie_id = 11) => {
         })
         .catch(err => console.error(err));
 }
-// <span>Language: ${movieData.spoken_languages[0].name}</span>
+const TRAILER_FETCH = (movie_id = 5) => {
 
-const OPTIONS = {
-    method: 'GET',
-    headers: {
-        accept: ' application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNDMwZDdkNmE3NWVmMjUzYjE3MWQxMzE0ZTNiOGY4ZiIsInN1YiI6IjY1MTViNTEwOTNiZDY5MDEzOGZjNjFjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DnXvPBDGXfiOwqal9-lzl2zqjV-mLbJGJhCTg3gX7Vo'
-    }
-};
-
-fetch(`https://api.themoviedb.org/3/movie/11/credits?language=en-US`, OPTIONS)
-    .then(response => response.json())
-    .then(player => { console.log(player); })
-    .catch(err => console.error(err));
-
-// curl --request GET \
-//      --url 'https://api.themoviedb.org/3/movie/11/credits?language=en-US' \
-//      --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNDMwZDdkNmE3NWVmMjUzYjE3MWQxMzE0ZTNiOGY4ZiIsInN1YiI6IjY1MTViNTEwOTNiZDY5MDEzOGZjNjFjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DnXvPBDGXfiOwqal9-lzl2zqjV-mLbJGJhCTg3gX7Vo' \
-//      --header 'accept: application/json'
-const TRAILER_FETCH = (movie_id = 11) => {
     fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos?language=en-US`, OPTIONS)
         .then(response => response.json())
         .then(trailer => {
@@ -75,6 +75,18 @@ const TRAILER_FETCH = (movie_id = 11) => {
         `
         })
 }
+const SEARCH_BTN=document.querySelector('#searchBTN')
+const ID_MOVIE_USER=document.querySelector('#idMovieUser')
 
-MOVIE_ID_FETCH()
-TRAILER_FETCH()
+SEARCH_BTN.addEventListener('click',()=>{
+    MOVIE_ID_CONTAINER.innerHTML=``
+    MOVIE_ID_FETCH(ID_MOVIE_USER.value)
+    TRAILER_FETCH(ID_MOVIE_USER.value)
+})
+
+
+
+// fetch(`https://api.themoviedb.org/3/movie/11/credits?language=en-US`, OPTIONS)
+//     .then(response => response.json())
+//     .then(player => { console.log(player); })
+//     .catch(err => console.error(err));
