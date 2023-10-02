@@ -75,6 +75,7 @@ const SET_WEEK = document.querySelector('#setWeek')
 
 
 SET_DAY.addEventListener('click', () => {
+  SET_DAY.style=` background-color: rgb(0, 0, 0);`
   MOVIE_LIST.innerHTML = ``
   paginationUser = 'day'
   FETCH_MOVIES(numPageUser, 'day')
@@ -94,3 +95,14 @@ SET_WEEK.addEventListener('click', () => {
   })
   PAGINTION_BTN[numPageUser - 1].classList.add('clicked')
 })
+
+const BTN_SPACE=document.querySelector('#btnSpace')
+const TARGET_ELEMENT=document.querySelector('#targetElement')
+const targetElementPosition = TARGET_ELEMENT.getBoundingClientRect().top;
+BTN_SPACE.addEventListener('click',function(){
+  window.scrollTo({
+  top: targetElementPosition-50,
+  behavior: 'smooth'
+})
+})
+

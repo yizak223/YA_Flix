@@ -14,14 +14,14 @@ body{
     align-items: center; */
     /* gap: 2vh;
     margin: 0; */
-    background-color: rgb(44, 44, 44);
+    background-color: rgb(0, 0, 0);
     margin: 0;
 }
 header{
     grid-area: header;
     background-color: rgba(0, 0, 0, 0.544);
     position: sticky;
-    top: 0;
+    top:  0;
 
 }
 .active{
@@ -31,6 +31,7 @@ header{
 }
 nav{
     display: flex;
+    align-items: center;
 }
 a{
     text-decoration: none;
@@ -38,7 +39,7 @@ a{
 
 }
 #companyContainer{
-    width: 8vw;
+    width: 10vw;
 }
 #company{
     color: rgb(55, 134, 252);
@@ -51,20 +52,61 @@ ul{
 main{
     grid-area: main;
 }
-#mainMovie{
+section{
+    background-image: url('https://img.mako.co.il/2018/04/15/shutterstock15_04_18540015799_i.jpg') ;  
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 95vh;
     display: flex;
-    /* width: 100%; */
-    /* height: 60vh; */
-}
-.mainmovieCardList{
-    height: 60vh;
-    /* width: 100vw; */
-}
-#mainMovie img{
-    height: 60vh;
+    align-items: center;
     
 }
+#welcomeContainer{
+    display: flex;
+    align-items: center;
+    margin-left: 5rem;
+    background-image: url();
+    /* width: 100vw; */
+    
+}
+#containerBtnH1{
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50vh;
+}
+h1{
+    font-size: 80px;
+}
+.otherColor{
+    color: rgb(55, 134, 252);
+}
 
+#btnSpace {
+    margin-left: 5rem;
+    --width: 150px;
+    --timing: 2s;
+    border: 0;
+    width: var(--width);
+    padding-block: 1em;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+    background: rgb(55, 134, 252);
+    transition: all 0.2s;
+    border-radius: 3px;
+}
+  
+#btnSpace:hover {
+    transform: scale(1.1) translateY(-1px);
+}
+#targetElement{
+    height: 5vh;
+    text-align: center;
+    margin-top: 1rem;
+    color:rgb(55, 134, 252) ;
+}
 #moviesList{
     /* width: 100vw; */
     /* height: 60vh; */

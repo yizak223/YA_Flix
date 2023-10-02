@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YA Flix</title>
-    <link rel="icon" href="https://www.nicepng.com/png/full/227-2276266_flix-my-tv-logo-flix-tv.png" type="image/x-icon">
+    <link rel="icon" href="https://www.nicepng.com/png/full/227-2276266_flix-my-tv-logo-flix-tv.png"
+        type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
     <header>
         <nav>
-            <ul id="companyContainer">
-                <a id="company" href="">YA-FLIX</a>
+            <ul>
+                <li><a id="company" href="">YA-FLIX</a></li>
             </ul>
             <ul>
                 <li><a href="../html/index.html" class="active">Home</a></li>
@@ -34,14 +38,28 @@
     </header>
     <main>
         <!-- <div id="mainMovie"></div> -->
-        <form >
-           
-            <input id="setDay"  name="trending" type="radio" checked>day
-            <input id="setWeek" name="trending" type="radio">week
-        </form>
-      
-        <div id="moviesList"></div>
-        
+        <section>
+            <div id="containerBtnH1">
+                <div id="welcomeContainer">
+                    <h1>Take <span class="otherColor">your</span> watching <br>experience to the <br> <span
+                            class="otherColor"> Next level</span>
+                    </h1>
+                </div>
+                <button id="btnSpace">
+                    Get Started
+                </button>
+            </div>
+            
+        </section>
+        <div > 
+            <h2 id="targetElement">
+                Trending Movies
+            </h2>
+        </div>
+        <div class="d-grid gap-2 d-md-block">
+            <button id="setDay" class="btn btn-primary" type="button">day</button>
+            <button id="setWeek" class="btn btn-primary" type="button">week</button>
+        </div>
         <div id="btnPage">
             <button class="paginationBtn">1</button>
             <button class="paginationBtn">2</button>
@@ -50,10 +68,14 @@
             <button class="paginationBtn">5</button>
             <input type="number" id="inptPage">
         </div>
+        <div id="moviesList"></div>
+
+
     </main>
     <footer>
 
     </footer>
     <script src="../js/main.js"></script>
 </body>
+
 </html>
