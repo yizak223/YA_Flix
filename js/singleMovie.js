@@ -42,13 +42,16 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
                                                             <button class='likeBtn'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
                                                         </div>
                                                     </div> 
-                                                </div>
-                                                <div id="containerActors"></div>
-                                            </div>`
+                                                </div><h1>CREW</h1>
+                                               <div id="containerActors"></div> 
+                                                <i class="fa fa-arrow-left arrowsClicked" aria-hidden="true"></i>
+                                                <i class="fa fa-arrow-right arrowsClicked" aria-hidden="true"></i>
+                                                </div>`
             const CONTAINER_ACTORS = document.querySelector('#containerActors')
             movieData.credits.crew.forEach((actor,i) => {
                 if(i>1){
                     CONTAINER_ACTORS.innerHTML+=`<div class='cardActor'>
+                                                
                                             <div class='containerImg'><img class='profileActor' src='http://image.tmdb.org/t/p/w500${actor.profile_path}' onerror="this.src='https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg';"></div>
                                             <p>${actor.name} <br>Role: ${actor.job}</p>
                                            </div> `
@@ -58,7 +61,7 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
 
             const LIKE_BTNS = document.querySelectorAll('.likeBtn');
             LIKE_BTNS.forEach(likeBtn => {
-                addEventListener('click', () => {
+                likeBtn.addEventListener('click', () => {
                     likeBtn.classList.toggle("userLiked");
                 });
             })
