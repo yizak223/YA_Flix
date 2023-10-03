@@ -1,0 +1,43 @@
+/* #BKGimgContainer {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(10px) opacity(50%); 
+    z-index: -100;
+  } */
+ 
+  /*
+  #BKGimg::before {
+    content: '';
+   
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  } */
+/* #BKGimg::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: -100;   */
+/* } */
+#content {
+    position: absolute;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    background-color: rgba(0, 255, 255, 0.597);
+  
+   } 
+  

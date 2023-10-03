@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YA Flix</title>
-    <link rel="icon" href="https://www.nicepng.com/png/full/227-2276266_flix-my-tv-logo-flix-tv.png" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" href="https://www.nicepng.com/png/full/227-2276266_flix-my-tv-logo-flix-tv.png"
+        type="image/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
-
+    <link rel="stylesheet" href="../css/layoutBkgImg.css">
+    <link rel="stylesheet" href="../css/searchMovie.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -19,10 +24,10 @@
                 <li><a href="../html/index.html">Home</a></li>
             </ul>
             <ul>
-                <li><a href="../html/singleMovie.html" >Single movie</a></li>
+                <li><a href="../html/singleMovie.html">Single movie</a></li>
             </ul>
             <ul>
-                <li><a href="../html/Aboout.html" >About</a></li>
+                <li><a href="../html/Aboout.html">About</a></li>
             </ul>
             <ul>
                 <li> <a href="../html/searchMovie.html" class="active">Search movie</a></li>
@@ -32,11 +37,30 @@
             </ul>
         </nav>
     </header>
+    <div id="backgImgContainer"></div>
     <main>
-      
+        <div id="searchElementContainer">
+            <div id="searchContainer">
+                <!-- <label for="">Search Movie By Number</label> -->
+                <input id="idMovieUser" type="text" placeholder="    Type your movie name here...">
+                <button id="searchBTN"> Search <i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <div id="movieByIdContainer">
+            <img id='backgImg'
+                src='https://img.mako.co.il/2021/03/08/53472480_l_autoOrient_i.jpg'>
+            <div id='containerPageBeforeMovie'>
+                <h1>Enjoy the <span id="RELAXspan">MOMENT</span></h1>
+            </div>
+        </div>
+           
+        </div> <div id="FIRSTmovieSEARCH"></div>
+        <div  id="listMovieSearch"></div>
     </main>
     <footer>
 
     </footer>
+    <script src="../js/searchMovie.js"></script>
 </body>
+
 </html>

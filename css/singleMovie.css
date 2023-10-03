@@ -3,12 +3,7 @@ nav{
     z-index: 1000;
     top: 0;
 }
-#movieByIdContainer{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    
-}
+
 #containerContent{
     width: 70%;
 }
@@ -70,21 +65,6 @@ iframe{
     height: 40vh;
     margin-top: 1rem;
 }
-#backgImgContainer{
-    top: 0;
-    left: 0;
-    width: 100%;
-    /* height: 100%; */
-    z-index: -100;
-}
-#backgImg{
-    position: fixed;
-    object-fit: cover;
-    width: 100%;
-    /* height: 100%; */
-    filter: blur(10px) opacity(90%);
-    
-}
 #likeRate{
     display: flex;
     width: 18vw;
@@ -114,38 +94,11 @@ iframe{
 #searchElementContainer{
   
 }
-#containerPageBeforeMovie{
-    margin-top: 5rem;
-    position: absolute;
-    z-index: 100;
-    padding: 2rem;
-    border-radius: 10px;
-    background-color: #93d3e893;
-}
-#RELAXspan{
-    color: rgb(41, 249, 249);
-}
-#searchContainer{
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-}
-#searchBTN{
-    height: 7vh;
-    width: 10vw;
-    border-radius: 10px;
-    border: none;
-    background-color: rgb(55, 134, 252);
-    color: #fff;
-}
-#idMovieUser{
-    border: none;
-    width: 80vw;
-    height: 7vh;
-    border-radius: 10px;
-}
+
+
+
+
+
 #containerActors{
     display: flex;
     flex-direction: row;
