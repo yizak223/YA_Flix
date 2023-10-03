@@ -1,43 +1,37 @@
-/* #BKGimgContainer {
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: blur(10px) opacity(50%); 
-    z-index: -100;
-  } */
- 
-  /*
-  #BKGimg::before {
-    content: '';
-   
-    
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  } */
-/* #BKGimg::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
-    z-index: -100;   */
-/* } */
-#content {
-    position: absolute;
-    text-align: center;
-    padding: 20px;
-    color: white;
-    background-color: rgba(0, 255, 255, 0.597);
-  
-   } 
-  
+#titleMoreMovies{
+    margin-top: 2rem;
+    color: rgb(55, 134, 252);
+    background-color: rgba(103, 103, 103, 0.817);
+    width: fit-content;
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+#titleMoreMovies:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(55, 134, 252);
+}
+.movieCard p{
+    color: #fff;
+    font-family: 'Sofia Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+.movieCard img{
+    width: 15vw;
+    height: 30vh;
+    border-radius: 0.5rem;
+    box-shadow: rgb(255 255 255 / 10%) 12px 13px 25px -6px;
+}
+#listMovieSearch{
+    /* width: 100vw; */
+    /* height: 60vh; */
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}

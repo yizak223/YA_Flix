@@ -18,8 +18,8 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
                                               <button><h2>Search for another<h2></button></div>`
             }
             console.log(movieData)
-            BACKG_IMG.innerHTML += `<img id='backgImg' src='http://image.tmdb.org/t/p/w500${movieData.backdrop_path}'>`
-            MOVIE_ID_CONTAINER.innerHTML += `<div id='containerPage'>
+            BACKG_IMG.innerHTML = `<img id='backgImg' src='http://image.tmdb.org/t/p/w500${movieData.backdrop_path}'>`
+            MOVIE_ID_CONTAINER.innerHTML = `<div id='containerPage'>
                                                 <div id='containerMovie'> 
                                                     <div id='containerContent'>
                                                         <div id='secContainerContent'>
@@ -42,7 +42,8 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
                                                             <button class='likeBtn'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
                                                         </div>
                                                     </div> 
-                                                </div><h1>CREW</h1>
+                                                </div>
+                                                <h1>CREW</h1>
                                                <div id="containerActors"></div> 
                                                 <i class="fa fa-arrow-left arrowsClicked" aria-hidden="true"></i>
                                                 <i class="fa fa-arrow-right arrowsClicked" aria-hidden="true"></i>
@@ -56,7 +57,6 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
                                             <p>${actor.name} <br>Role: ${actor.job}</p>
                                            </div> `
                 }
-
             })
 
             const LIKE_BTNS = document.querySelectorAll('.likeBtn');
