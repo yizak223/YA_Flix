@@ -4,26 +4,6 @@ nav{
     top: 0;
 }
 
-#wrongId h2{
-    color: rgb(55, 134, 252);
-}
-#wrongId{
-    height: 60vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    z-index: -100;
-    color: #ff0000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-#wrongId h1{
-    padding: 2rem;
-    border-radius: 10px;
-    background-color: #00000089;
-}
 
 
 iframe{

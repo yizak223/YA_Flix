@@ -12,12 +12,14 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
     fetch(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=bc1f09cc15ddc7d57d1d665f10e1e5a6&language=en-US&append_to_response=credits`)
         .then(response => response.json())
         .then(movieData => {
+            console.log(movieData)
             if (movieData.success == false) {
-                BACKG_IMG.innerHTML += `<img id='backgImg' src='https://cdn.w600.comps.canstockphoto.co.il/%D7%91%D7%95%D7%9C-%D7%A9%D7%9C-%D7%92%D7%95%D7%9E%D7%99-%D7%9C%D7%90-%D7%A7%D7%99%D7%99%D7%9D-%D7%A6%D7%99%D7%95%D7%A8_csp40308695.jpg'>`
+                BACKG_IMG.innerHTML = `<img id='backgImg' src='https://www.wpoven.com/blog/wp-content/uploads/2022/09/error-404.png'>`
                 MOVIE_ID_CONTAINER.innerHTML = `<div id='wrongId'><h1>This movie number does not exist</h1>
                                               <button><h2>Search for another<h2></button></div>`
             }
-            console.log(movieData)
+            else{
+                 
             BACKG_IMG.innerHTML = `<img id='backgImg' src='http://image.tmdb.org/t/p/w500${movieData.backdrop_path}'>`
             MOVIE_ID_CONTAINER.innerHTML = `<div id='containerPage'>
                                                 <div id='containerMovie'> 
@@ -65,6 +67,8 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
                     likeBtn.classList.toggle("userLiked");
                 });
             })
+            }
+          
         })
         .catch(err => console.error(err));
 }
@@ -83,6 +87,7 @@ const ID_MOVIE_USER = document.querySelector('#idMovieUser')
 
 SEARCH_BTN.addEventListener('click', () => {
     MOVIE_ID_CONTAINER.innerHTML = ``
+    BACKG_IMG.innerHTML=``
     MOVIE_ID_FETCH(ID_MOVIE_USER.value)
     TRAILER_FETCH(ID_MOVIE_USER.value)
 })
