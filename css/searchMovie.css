@@ -6,6 +6,7 @@
     padding: 1.5rem;
     border-radius: 10px;
     transition: 0.5s;
+    cursor: pointer;
 }
 #titleMoreMovies:hover{
     color: rgb(255, 255, 255);
@@ -23,6 +24,11 @@
     border-radius: 0.5rem;
     box-shadow: rgb(255 255 255 / 10%) 12px 13px 25px -6px;
 }
+.movieCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 #listMovieSearch{
     /* width: 100vw; */
     /* height: 60vh; */
@@ -34,4 +40,12 @@
     align-items: center;
     gap: 2rem;
     padding: 2rem;
+}
+.paginationBtnActive{
+    padding: 1vh;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(55, 134, 252);
+    color: #fff;
+    margin-bottom: 2rem;
 }

@@ -146,7 +146,6 @@ h1{
 
 .movieCardList{
     width: 15vw;
-    height: 35vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -237,4 +236,11 @@ form{
 .clickdBTNpopularActive{
     background-color: #373737;
 
+}
+.idMovieContainer{
+    padding: 0.5rem;
+    background: #373737c1;
+    border-radius: 10px;
+    color:rgb(255, 0, 0) ;
+    font-weight: 900;
 }

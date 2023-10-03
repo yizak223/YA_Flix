@@ -17,6 +17,7 @@ const FETCH_MOVIES = (numPage = 1, time = `day`) => {
         MOVIE_LIST.innerHTML += `<div class='movieCardList'>
                                   <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}'>
                                   <button class='likeBtn'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
+                                  <span class='idMovieContainer'>ID: ${movie.id}</span>
                                 </div>`})
       const USER_LIKED = document.querySelectorAll('.likeBtn')
       USER_LIKED.forEach((btn) => {
