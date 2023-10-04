@@ -7,7 +7,7 @@ const OPTIONS = {
 };
 const MOVIE_ID_CONTAINER = document.querySelector('#movieByIdContainer')
 const BACKG_IMG = document.querySelector('#backgImgContainer')
-
+let favourite_movies = JSON.parse(localStorage.getItem('favourite')) || [];
 const MOVIE_ID_FETCH = (movie_id = 5) => {
     fetch(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=bc1f09cc15ddc7d57d1d665f10e1e5a6&language=en-US&append_to_response=credits`)
         .then(response => response.json())
@@ -19,7 +19,8 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
                                               <button><h2>Search for another<h2></button></div>`
             }
             else{
-                 
+            const isLiked = favourite_movies.includes(movieData.original_title); 
+            const likeButtonClass = isLiked ? 'userLiked' : ''; 
             BACKG_IMG.innerHTML = `<img id='backgImg' src='http://image.tmdb.org/t/p/w500${movieData.backdrop_path}'>`
             MOVIE_ID_CONTAINER.innerHTML = `<div id='containerPage'>
                                                 <div id='containerMovie'> 
@@ -41,7 +42,7 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
                                                         <img src='http://image.tmdb.org/t/p/w500${movieData.poster_path}'>
                                                         <div id='likeRate'>
                                                             <span id='rate'>Rate: ${movieData.vote_average} <i class="fa fa-star" aria-hidden="true"></i></span>
-                                                            <button class='likeBtn'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
+                                                            <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
                                                         </div>
                                                     </div> 
                                                 </div>
@@ -65,6 +66,14 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
             LIKE_BTNS.forEach(likeBtn => {
                 likeBtn.addEventListener('click', () => {
                     likeBtn.classList.toggle("userLiked");
+                    const movieTitle =movieData.original_title;
+                    const movieIndex = favourite_movies.indexOf(movieTitle);
+                    if (movieIndex === -1) {
+                        favourite_movies.push(movieTitle); 
+                      } else {
+                        favourite_movies.splice(movieIndex, 1); 
+                      }
+                      localStorage.setItem('favourite', JSON.stringify(favourite_movies));
                 });
             })
             }
@@ -92,8 +101,8 @@ SEARCH_BTN.addEventListener('click', () => {
     TRAILER_FETCH(ID_MOVIE_USER.value)
 })
 
-
-
+MOVIE_ID_FETCH()
+console.log(JSON.parse(localStorage.getItem('favourite')));
 // fetch(`https://api.themoviedb.org/3/movie/11/credits?language=en-US`, OPTIONS)
 //     .then(response => response.json())
 //     .then(player => { console.log(player); })

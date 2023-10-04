@@ -7,7 +7,7 @@ const OPTIONS = {
 };
 const MAIN_MOVIE=document.querySelector('#mainMovie')
 const MOVIE_LIST = document.querySelector('#moviesList')
-let favourite_movies = JSON.parse(localStorage.getItem('favourite')) || []; // Initialize from local storage
+let favourite_movies = JSON.parse(localStorage.getItem('favourite')) || []; 
 const array_favorite=[]
 const FETCH_MOVIES = (numPage = 1, time = `day`) => {
   fetch(`https://api.themoviedb.org/3/trending/movie/${time}?language=en-US&page=${numPage}`,OPTIONS)
@@ -15,8 +15,8 @@ const FETCH_MOVIES = (numPage = 1, time = `day`) => {
     .then(data => {
       console.log(data)
       data.results.forEach((movie) => {
-        const isLiked = favourite_movies.includes(movie.title); // Check if the movie is liked
-        const likeButtonClass = isLiked ? 'userLiked' : ''; // Apply 'userLiked' class if liked
+        const isLiked = favourite_movies.includes(movie.title); 
+        const likeButtonClass = isLiked ? 'userLiked' : ''; 
         MOVIE_LIST.innerHTML += `<div class='movieCardList'>
         <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}'>
         <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
@@ -27,14 +27,12 @@ const FETCH_MOVIES = (numPage = 1, time = `day`) => {
         btn.addEventListener('click',()=>{
             btn.classList.toggle("userLiked"); 
             const movieTitle = data.results[i].title;
-            // if (typeof favourite === 'defined') {
-            //   localStorage.setItem('favouriteee',JSON.stringify(favourite_movies))
-            // } 
+
             const movieIndex = favourite_movies.indexOf(movieTitle);
             if (movieIndex === -1) {
-              favourite_movies.push(movieTitle); // Not in liked list, add it
+              favourite_movies.push(movieTitle); 
             } else {
-              favourite_movies.splice(movieIndex, 1); // Already in liked list, remove it
+              favourite_movies.splice(movieIndex, 1); 
             }
             localStorage.setItem('favourite', JSON.stringify(favourite_movies));
         })  
@@ -44,7 +42,6 @@ const FETCH_MOVIES = (numPage = 1, time = `day`) => {
 }
 console.log(localStorage.getItem('favourite'));
 console.log(JSON.parse(localStorage.getItem('favourite')));
-// console.log(JSON.parse(localStorage.getItem('favouriteee')));
 // localStorage.clear();
 
 FETCH_MOVIES()
@@ -64,12 +61,7 @@ PAGINTION_BTN.forEach(BTN => {
   })
 });
 
-// const INPT_PAGE = document.querySelector('#inptPage')
-// INPT_PAGE.addEventListener('change', () => {
-//   MOVIE_LIST.innerHTML = ``
-//   numPageUser = INPT_PAGE.value
-//   FETCH_MOVIES(numPageUser, paginationUser)
-// })
+
 
 const SET_DAY = document.querySelector('#setDay')
 const SET_WEEK = document.querySelector('#setWeek')
@@ -110,19 +102,5 @@ BTN_SPACE.addEventListener('click',function(){
   behavior: 'smooth'
 })
 })
-// function updateButtonStyles() {
-//   const USER_LIKED = document.querySelectorAll('.likeBtn');
-//   USER_LIKED.forEach((btn, i) => {
-//     const movieTitle = data.results[i].title;
-//     if (favourite_movies.includes(movieTitle)) {
-//       btn.classList.add('userLiked'); // Add the 'userLiked' class
-//     } else {
-//       btn.classList.remove('userLiked'); // Remove the 'userLiked' class
-//     }
-//   });
-// }
-// window.addEventListener('load', () => {
-//   updateButtonStyles();
-// });
 
 
