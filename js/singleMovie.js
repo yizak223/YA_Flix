@@ -27,7 +27,7 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
                                                         <div id='secContainerContent'>
                                                             <div id='titleContainer'>
                                                                 <h1>${movieData.original_title}</h1>
-                                                                <span>Year: ${movieData.release_date.substring(0, 4)}</span> | Time: ${movieData.runtime}minutes
+                                                                <span>Year: ${movieData.release_date.substring(0, 4)} | Time: ${movieData.runtime} minutes | Genre: ${movieData.genres[0].name}</span>
                                                             </div>
                                                             <div id='paragrphContainer'> 
                                                                 <span>Directed By: ${movieData.credits.crew[0].name}</span>
