@@ -38,7 +38,10 @@ nav{
 a{
     text-decoration: none;
     color: rgb(184, 184, 184);
-
+    
+}
+a:hover{
+    transition: 0.5s;
 }
 #companyContainer{
     width: 10vw;
@@ -169,7 +172,6 @@ footer{
     justify-content: center;
     gap: 4rem;
     color: red;
-    
 }
 
 #btnPage{

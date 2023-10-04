@@ -55,17 +55,16 @@ const FETCH_MOVIE_SEARCH = (userSeach, numpage = 1) => {
                                                 </div><h4 id='titleMoreMovies'>More from this movie</h4>                                        
                                                 <div  id="listMovieSearch"></div>
                                                 <div id="btnPage">
-                                                <button class="paginationBtn">1</button>
-                                                <button class="paginationBtn">2</button>
-                                                <button class="paginationBtn">3</button>
-                                                <button class="paginationBtn">4</button>
-                                                <button class="paginationBtn">5</button>
-                                            </div>
+                                                    <button id='btn1' class="paginationBtn paginationBtnActive">1</button>
+                                                    <button id='btn2' class="paginationBtn">2</button>
+                                                    <button id='btn3' class="paginationBtn">3</button>
+                                                    <button id='btn4' class="paginationBtn">4</button>
+                                                    <button id='btn5' class="paginationBtn">5</button>
+                                                </div>
                                             </div>`
-
                 const LIST_MOVIE_SEARCH = document.querySelector('#listMovieSearch')
                 const TRAILER_FETCH = (movie_id) => {
-
+                    let numPageUser=1;
                     fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos?language=en-US`, OPTIONS)
                         .then(response => response.json())
                         .then(trailer => {
@@ -81,7 +80,16 @@ const FETCH_MOVIE_SEARCH = (userSeach, numpage = 1) => {
                      <span class='idMovieContainer'>ID: ${movie.id}</span>
                      </div>`
 
-                });
+                });   
+                  const PAGINTION_BTN = document.querySelectorAll('.paginationBtn')
+                PAGINTION_BTN.forEach(BTN => {
+                    BTN.addEventListener('click', () => {
+                         numPageUser = BTN.textContent
+                         numpage=BTN.textContent
+                         console.log(numPageUser);
+                        FETCH_MOVIE_SEARCH(ID_MOVIE_USER.value, numPageUser)
+                    })
+                })
                 const USER_LIKED = document.querySelectorAll('.likeBtn')
                 USER_LIKED.forEach((btn) => {
                     btn.addEventListener('click',()=>{
@@ -92,20 +100,10 @@ const FETCH_MOVIE_SEARCH = (userSeach, numpage = 1) => {
                 MORE_MOVIES.addEventListener('click',()=>{
                     FETCH_MOVIE_SEARCH(ID_MOVIE_USER.value, ++numpage)
                 })
-                const PAGINTION_BTN = document.querySelectorAll('.paginationBtn')
-                PAGINTION_BTN.forEach(BTN => {
-                    BTN.addEventListener('click', () => {
-                        let numPageUser = BTN.textContent
-                        FETCH_MOVIE_SEARCH(ID_MOVIE_USER.value, numPageUser)
-                        console.log(1);
-                        PAGINTION_BTN.forEach((btn) => {
+                 PAGINTION_BTN.forEach((btn,i) => {
                             btn.classList.remove('paginationBtnActive');
-                            console.log(2);
-                        })
-                        console.log(3);
-                        BTN.classList.add('paginationBtnActive')
-                    })
-                })
+                         })
+                         PAGINTION_BTN[numpage-1].classList.add('paginationBtnActive')
             }
         })
 
@@ -116,6 +114,7 @@ const FETCH_MOVIE_SEARCH = (userSeach, numpage = 1) => {
 // MOVIE_BY_ID.innerHTML = ``
 // FIRST_MOVIE_SEARCH.innerHTML = ``
 // FETCH_MOVIE_SEARCH('BATMAN')
+
 
 const SEARCH_BTN = document.querySelector('#searchBTN')
 const ID_MOVIE_USER = document.querySelector('#idMovieUser')
