@@ -8,7 +8,7 @@ body{
     'footer footer footer footer';
     line-height: normal;
     /* width: 100vw; */
-
+  
     color: #fff;
     /* display: flex;
     flex-direction: column;
@@ -163,9 +163,6 @@ h1{
 }
 footer{
     grid-area: footer;
-    padding: 0;
-    margin: 0;
-    width: 90vw;
 }
 .nav{
     /* display: flex; */
