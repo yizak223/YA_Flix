@@ -59,6 +59,11 @@
     border: none;
     background-color: rgb(55, 134, 252);
     color: #fff;
+    transition: 0.5s;
+}
+#searchBTN:hover{
+    background-color: #fff ;
+    color:rgb(55, 134, 252);
 }
 #containerMovie{
     background-color: rgba(95, 94, 92, 0.721);

@@ -12,7 +12,8 @@
 article{
     margin-top: 5rem;
     margin-left: 8rem;
-   
+    display: flex;
+    flex-direction: column;
 }
 #paragrph{
      background-color: rgba(227, 227, 222, 0.446);
@@ -25,8 +26,8 @@ h1{
     max-width: fit-content;
     padding: 1rem;
     background-color: rgba(227, 227, 222, 0.446);
-    color: rgb(186, 58, 232);
-    text-shadow: rgb(38, 62, 248) 1px 0 10px;
+   
+    text-shadow: rgb(55, 134, 252) 1px 0 10px;
 }
 h4{
     color: rgb(255, 255, 255);
@@ -40,19 +41,24 @@ h4{
     font-size: 3vw;
     padding: 0.5rem;
     border-radius: 10px;
-   
+    background-color: rgba(0, 0, 0, 0.631);
     max-width: fit-content;
 }
 .fa-linkedin-square, .fa-facebook-square{
     background: none;
     color: rgba(10, 102, 194,1);
     border-radius: 10px;
+    transition: 0.5s;
 }
 .fa-github-square, .fa-instagram{
     background: none;
     color: rgb(210, 1, 252);
+    transition: 0.5s;
 }
-.logoImg{
+.fa-github-square:hover, .fa-instagram:hover, .fa-linkedin-square:hover, .fa-facebook-square:hover{
+    color: aliceblue;
+}
+/* .logoImg{
     width: 6vw;
     height: 7vh;  
-}
+} */

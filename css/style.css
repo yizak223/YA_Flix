@@ -6,6 +6,7 @@ body{
     'main main main main'
     'main main main main'
     'footer footer footer footer';
+    line-height: normal;
     /* width: 100vw; */
 
     color: #fff;
@@ -53,18 +54,20 @@ ul{
 main{
     grid-area: main;
 }
+/*https://img.lovepik.com/background/20211022/medium/lovepik-film-background-board-film-background-image_500877889.jpg*/
+/*  https://img.mako.co.il/2018/04/15/shutterstock15_04_18540015799_i.jpg*/
 section{
-    background-image: url('https://img.mako.co.il/2018/04/15/shutterstock15_04_18540015799_i.jpg') ;  
+    background-image: url('https://wallpapers-hub.art/wallpaper-images/48083.jpg') ;  
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: right;
     height: 95vh;
-    display: flex;
-    align-items: center;
+  
     
 }
 #welcomeContainer{
-    display: flex;
-    align-items: center;
+    
+    margin-top: 5rem;
     margin-left: 5rem;
     /* width: 100vw; */
     
@@ -73,7 +76,7 @@ section{
     width: 60vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 2rem;
     height: 50vh;
 }
 h1{
@@ -160,6 +163,9 @@ h1{
 }
 footer{
     grid-area: footer;
+    padding: 0;
+    margin: 0;
+    width: 90vw;
 }
 .nav{
     /* display: flex; */
