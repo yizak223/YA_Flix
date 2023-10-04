@@ -161,9 +161,6 @@ h1{
     background-color: rgb(255, 255, 255);
     color: rgb(55, 134, 252);
 }
-.userLiked{
-    background-color: #002aff;
-}
 footer{
     grid-area: footer;
 }
