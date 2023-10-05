@@ -1,7 +1,6 @@
 #container{
     display: flex;
     justify-content: center;
-    /* align-items: flex-start; */
 }
 #bkgImg {
     backdrop-filter: blur(10px);
@@ -11,12 +10,26 @@
     height: 90vh;
     filter: blur(4px) opacity(60%);
 }
-
 #contentContainer { 
-    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     position: absolute;
     z-index: 100;
-    padding: 2rem;
+    height: 30vh;
+    margin-top: 3rem;
+}
+#titleContainer{
     border-radius: 10px;
     background-color: #93d3e893;
+    padding: 1rem;
+}
+#commit{
+    padding: 1rem;
+    width: fit-content;
+    border-radius: 10px;
+    background-color: #93d3e893;
+}
+#yet{
+    color: rgb(88, 138, 213);
 }

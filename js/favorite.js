@@ -1,6 +1,7 @@
 let favourite_movies = JSON.parse(localStorage.getItem('favourite')) || [];
 console.log(JSON.parse(localStorage.getItem('favourite')));
-const FAVORITE_CONTAINER = document.querySelector('#container')
+const DISPLAY_BEFORE = document.querySelector('#container')
+const FAVORITE_CONTAINER=document.querySelector('#listMovieSearch')
 const OPTIONS = {
     method: 'GET',
     headers: {
@@ -49,7 +50,7 @@ const FETCH_MOVIE = (idMovie) => {
 
 if (favourite_movies.length > 0) {
     console.log(true);
-    FAVORITE_CONTAINER.innerHTML = ``
+    DISPLAY_BEFORE.innerHTML = ``
     favourite_movies.forEach((movie) => {
         FETCH_MOVIE(movie)
     });
