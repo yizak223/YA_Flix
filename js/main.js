@@ -22,8 +22,8 @@ const FETCH_MOVIES = (numPage = 1, time = 'day') => {
 
         MOVIE_LIST.innerHTML += `<div class='movieCardList'>
           <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}'>
+          <span class='idMovieContainer'> ${movie.title}</span>
           <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
-          <span class='idMovieContainer'>ID: ${movie.id}</span>
         </div>`;
       });
 
@@ -46,7 +46,7 @@ const FETCH_MOVIES = (numPage = 1, time = 'day') => {
 };
 
 
-console.log(localStorage.getItem('favourite'));
+// console.log(localStorage.getItem('favourite'));
 console.log(JSON.parse(localStorage.getItem('favourite')));
 // localStorage.clear();
 

@@ -39,22 +39,28 @@
 #RELAXspan{
     color: rgb(41, 249, 249);
 }
-#searchContainer{
+#searchElementContainer{
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 15px;
+    
+}
+
+#searchContainer{
+   width: 85vw;
+   border-radius: 15px;
+    
 }
 #idMovieUser{
     border: none;
-    width: 80vw;
+    width: 87%;
     height: 7vh;
     border-radius: 10px;
 }
 #searchBTN{
     height: 7vh;
-    width: 10vw;
+    width: 12%;
     border-radius: 10px;
     border: none;
     background-color: rgb(55, 134, 252);
@@ -69,19 +75,18 @@
     background-color: rgba(95, 94, 92, 0.721);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 #containerMovie img{
     width: 18vw;
     height: 50vh;
-    margin-right: 5rem;
-    margin-top: 2rem;
+    /* margin-right: 5rem;
+    margin-top: 2rem; */
 }
 #containerContent{
     width: 70%;
 }
 #secContainerContent{
-    margin-left: 2rem;
     padding-bottom: 2rem;
     margin-right: 2rem;
 }
@@ -96,9 +101,9 @@
   #containerImgDetails{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: space-evenly;
 }
+
 #likeRate{
     display: flex;
     width: 18vw;

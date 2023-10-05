@@ -25,9 +25,11 @@
     box-shadow: rgb(255 255 255 / 10%) 12px 13px 25px -6px;
 }
 .movieCard{
+    width: 15vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
 }
 #listMovieSearch{
     /* width: 100vw; */
@@ -39,7 +41,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    padding: 2rem;
+    padding-top: 2rem;
 }
 .paginationBtnActive{
     padding: 1vh;

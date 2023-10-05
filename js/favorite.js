@@ -17,10 +17,11 @@ const FETCH_MOVIE = (idMovie) => {
             const isLiked = favourite_movies.includes(movie.id); 
             const likeButtonClass = isLiked ? 'userLiked' : '';
             FAVORITE_CONTAINER.innerHTML += `<div class='movieCardList'>
-            <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}'>
+            <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}'> 
+            <span class='idMovieContainer'> ${movie.title}</span>
             <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
-            <span class='idMovieContainer'>ID: ${movie.id}</span>
           </div>`
+ 
             const USER_LIKED = document.querySelectorAll('.likeBtn');
             USER_LIKED.forEach((btn, i) => {
                 btn.addEventListener('click', () => {
