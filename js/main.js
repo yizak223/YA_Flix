@@ -8,38 +8,44 @@ const OPTIONS = {
 const MAIN_MOVIE=document.querySelector('#mainMovie')
 const MOVIE_LIST = document.querySelector('#moviesList')
 let favourite_movies = JSON.parse(localStorage.getItem('favourite')) || []; 
-const array_favorite=[]
-const FETCH_MOVIES = (numPage = 1, time = `day`) => {
-  fetch(`https://api.themoviedb.org/3/trending/movie/${time}?language=en-US&page=${numPage}`,OPTIONS)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data)
-      data.results.forEach((movie) => {
-        const isLiked = favourite_movies.includes(movie.title); 
-        const likeButtonClass = isLiked ? 'userLiked' : ''; 
-        MOVIE_LIST.innerHTML += `<div class='movieCardList'>
-        <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}'>
-        <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
-        <span class='idMovieContainer'>ID: ${movie.id}</span>
-      </div>`;})
-      const USER_LIKED = document.querySelectorAll('.likeBtn')
-      USER_LIKED.forEach((btn,i) => {
-        btn.addEventListener('click',()=>{
-            btn.classList.toggle("userLiked"); 
-            const movieTitle = data.results[i].title;
 
-            const movieIndex = favourite_movies.indexOf(movieTitle);
-            if (movieIndex === -1) {
-              favourite_movies.push(movieTitle); 
-            } else {
-              favourite_movies.splice(movieIndex, 1); 
-            }
-            localStorage.setItem('favourite', JSON.stringify(favourite_movies));
-        })  
+const FETCH_MOVIES = (numPage = 1, time = 'day') => {
+  fetch(`https://api.themoviedb.org/3/trending/movie/${time}?language=en-US&page=${numPage}`, OPTIONS)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      MOVIE_LIST.innerHTML = '';
+
+      data.results.forEach((movie) => {
+        const isLiked = favourite_movies.includes(movie.id); // Check if the movie ID is liked
+        const likeButtonClass = isLiked ? 'userLiked' : '';
+
+        MOVIE_LIST.innerHTML += `<div class='movieCardList'>
+          <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}'>
+          <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
+          <span class='idMovieContainer'>ID: ${movie.id}</span>
+        </div>`;
+      });
+
+      const USER_LIKED = document.querySelectorAll('.likeBtn');
+      USER_LIKED.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+          btn.classList.toggle('userLiked');
+          const movieId = data.results[i].id;
+          const movieIndex = favourite_movies.indexOf(movieId);
+          if (movieIndex === -1) {
+            favourite_movies.push(movieId);
+          } else {
+            favourite_movies.splice(movieIndex, 1);
+          }
+          localStorage.setItem('favourite', JSON.stringify(favourite_movies));
+        });
       });
     })
-    .catch(err => console.error(err));
-}
+    .catch((err) => console.error(err));
+};
+
+
 console.log(localStorage.getItem('favourite'));
 console.log(JSON.parse(localStorage.getItem('favourite')));
 // localStorage.clear();
@@ -93,14 +99,14 @@ SET_WEEK.addEventListener('click', () => {
   PAGINTION_BTN[numPageUser - 1].classList.add('paginationBtnActive')
 })
 
-const BTN_SPACE=document.querySelector('#btnSpace')
-const TARGET_ELEMENT=document.querySelector('#targetElement')
+const BTN_SPACE = document.querySelector('#btnSpace')
+const TARGET_ELEMENT = document.querySelector('#targetElement')
 const targetElementPosition = TARGET_ELEMENT.getBoundingClientRect().top;
-BTN_SPACE.addEventListener('click',function(){
+BTN_SPACE.addEventListener('click', function () {
   window.scrollTo({
-  top: targetElementPosition-50,
-  behavior: 'smooth'
-})
+    top: targetElementPosition - 50,
+    behavior: 'smooth'
+  })
 })
 
 

@@ -26,14 +26,18 @@ h1{
     max-width: fit-content;
     padding: 1rem;
     background-color: rgba(227, 227, 222, 0.446);
-   
+   color: rgb(0, 0, 0);
     text-shadow: rgb(55, 134, 252) 1px 0 10px;
 }
+h3{
+    color: rgb(0, 0, 0);
+}
 h4{
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 #frtende{
-    color: rgb(73, 237, 117);
+    color: rgb(0, 0, 0);
+    font-weight: 800;
 }
 #socialMedia {
     background: none;
