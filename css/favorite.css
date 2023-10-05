@@ -1,0 +1,22 @@
+#container{
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-start; */
+}
+#bkgImg {
+    backdrop-filter: blur(10px);
+    position: fixed;
+    object-fit: cover;
+    width: 100vw;
+    height: 90vh;
+    filter: blur(4px) opacity(60%);
+}
+
+#contentContainer { 
+    margin-top: 5rem;
+    position: absolute;
+    z-index: 100;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #93d3e893;
+}

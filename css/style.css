@@ -165,6 +165,9 @@ footer{
     grid-area: footer;
 }
 .nav{
+    z-index: 300;
+    position: sticky;
+    top: 0;
     /* display: flex; */
     justify-content: center;
     gap: 4rem;
