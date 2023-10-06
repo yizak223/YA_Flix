@@ -20,10 +20,17 @@ const FETCH_MOVIES = (numPage = 1, time = 'day') => {
         const isLiked = favourite_movies.includes(movie.id); // Check if the movie ID is liked
         const likeButtonClass = isLiked ? 'userLiked' : '';
 
-        MOVIE_LIST.innerHTML += `<div class='movieCardList'>
+        MOVIE_LIST.innerHTML += `
+        <div class='movieCardList'>
           <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}'>
-          <span class='idMovieContainer'> ${movie.title}</span>
-          <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
+          <div class='containerNameRateLike' >
+                <span class='idMovieContainer'> ${movie.title}</span>
+            <div class='ContainerRateImdb' >
+                <span class='imdbRate'>${movie.vote_average} <i class="fa fa-imdb" aria-hidden="true"></i>
+                </span>
+                <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
+            </div>
+          </div>
         </div>`;
       });
 

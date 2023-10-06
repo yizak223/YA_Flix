@@ -13,8 +13,24 @@ iframe{
 }
 
 
+/* footer{
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+} */
+/* Styling for WebKit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+}
 
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+}
 
+::-webkit-scrollbar-track {
+    background-color: #837f7f00
+}
 
 
 
@@ -24,6 +40,7 @@ iframe{
     margin-top: 2rem;
     height: fit-content;
     overflow-x: auto;
+   
 }
 .containerImg{
     width: 10vw;

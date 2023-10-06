@@ -85,12 +85,18 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1 ,numMovieBiggerDisplay=0) =>
 
             LIST_MOVIE_SEARCH.innerHTML += `<div class='movieCard'>
                                              <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}' onerror="this.src='https://t3.ftcdn.net/jpg/04/62/93/66/360_F_462936689_BpEEcxfgMuYPfTaIAOC1tCDurmsno7Sp.jpg';">
-                                             <span class='idMovieContainer'> ${movie.title}</span>
-                                             <button class='showMoreDitails'>Show More</button>
-                                             <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
+                                             <div class='containerNameRateLike' >
+                                                  <span class='idMovieContainer'> ${movie.title}</span>
+                                                <div class='ContainerRateImdb' >
+                                                  <span class='imdbRate'>${movie.vote_average} <i class="fa fa-imdb" aria-hidden="true"></i></span>
+                                                  <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
+                                                </div>
+                                                <button class='showMoreDitails'>Show More</button>
+                                             </div>
                                            </div>`;
           }
-
+//  */ 
+//
         });
 
         const PAGINATION_BTN = document.querySelectorAll('.paginationBtn');

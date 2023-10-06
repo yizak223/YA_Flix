@@ -1,9 +1,9 @@
 const OPTIONS = {
-    method: 'GET',
-    headers: {
-        accept: ' application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNDMwZDdkNmE3NWVmMjUzYjE3MWQxMzE0ZTNiOGY4ZiIsInN1YiI6IjY1MTViNTEwOTNiZDY5MDEzOGZjNjFjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DnXvPBDGXfiOwqal9-lzl2zqjV-mLbJGJhCTg3gX7Vo'
-    }
+  method: 'GET',
+  headers: {
+    accept: ' application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNDMwZDdkNmE3NWVmMjUzYjE3MWQxMzE0ZTNiOGY4ZiIsInN1YiI6IjY1MTViNTEwOTNiZDY5MDEzOGZjNjFjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DnXvPBDGXfiOwqal9-lzl2zqjV-mLbJGJhCTg3gX7Vo'
+  }
 };
 const MOVIE_ID_CONTAINER = document.querySelector('#movieByIdContainer');
 const BACKG_IMG = document.querySelector('#backgImgContainer');
@@ -50,7 +50,7 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
                                           <div id="containerActors"></div>
                                           <i class="fa fa-arrow-left arrowsClicked" aria-hidden="true"></i>
                                           <i class="fa fa-arrow-right arrowsClicked" aria-hidden="true"></i>
-                                        </div>`;
+                                        </div> `;
         const CONTAINER_ACTORS = document.querySelector('#containerActors');
         movieData.credits.crew.forEach((actor, i) => {
           if (i > 1) {
@@ -60,7 +60,7 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
                                            </div>`;
           }
         });
-
+       
         const LIKE_BTNS = document.querySelectorAll('.likeBtn');
         LIKE_BTNS.forEach((likeBtn) => {
           likeBtn.addEventListener('click', () => {
@@ -83,27 +83,23 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
 
 const TRAILER_FETCH = (movie_id = 5) => {
 
-    fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos?language=en-US`, OPTIONS)
-        .then(response => response.json())
-        .then(trailer => {
-            console.log(trailer)
-            containerTrailer.innerHTML += ` <iframe width="550" height="315" src="https://www.youtube.com/embed/${trailer.results[0].key}" frameborder="0" allowfullscreen></iframe>
+  fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos?language=en-US`, OPTIONS)
+    .then(response => response.json())
+    .then(trailer => {
+      console.log(trailer)
+      containerTrailer.innerHTML += ` <iframe width="550" height="315" src="https://www.youtube.com/embed/${trailer.results[0].key}" frameborder="0" allowfullscreen></iframe>
         `
-        })
+    })
 }
 const SEARCH_BTN = document.querySelector('#searchBTN')
 const ID_MOVIE_USER = document.querySelector('#idMovieUser')
 
 SEARCH_BTN.addEventListener('click', () => {
-    MOVIE_ID_CONTAINER.innerHTML = ``
-    BACKG_IMG.innerHTML=``
-    MOVIE_ID_FETCH(ID_MOVIE_USER.value)
-    TRAILER_FETCH(ID_MOVIE_USER.value)
+  MOVIE_ID_CONTAINER.innerHTML = ``
+  BACKG_IMG.innerHTML = ``
+  MOVIE_ID_FETCH(ID_MOVIE_USER.value)
+  TRAILER_FETCH(ID_MOVIE_USER.value)
+
 })
 
-// MOVIE_ID_FETCH()
 console.log(JSON.parse(localStorage.getItem('favourite')));
-// fetch(`https://api.themoviedb.org/3/movie/11/credits?language=en-US`, OPTIONS)
-//     .then(response => response.json())
-//     .then(player => { console.log(player); })
-//     .catch(err => console.error(err));
