@@ -41,15 +41,16 @@ const MOVIE_ID_FETCH = (movie_id = 5) => {
                                             <div id='containerImgDetails'>
                                               <img src='http://image.tmdb.org/t/p/w500${movieData.poster_path}'>
                                               <div id='likeRate'>
-                                                <span id='rate'>Rate: ${movieData.vote_average} <i class="fa fa-star" aria-hidden="true"></i></span>
-                                                <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
+                                                <div class='ContainerRateImdb' >
+                                                  <span class='imdbRate'>${movieData.vote_average} <i class="fa fa-imdb" aria-hidden="true"></i></span>
+                                                  <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
+                                                </div>
                                               </div>
                                             </div>
                                           </div>
                                           <h1>CREW</h1>
-                                          <div id="containerActors"></div>
-                                          <i class="fa fa-arrow-left arrowsClicked" aria-hidden="true"></i>
-                                          <i class="fa fa-arrow-right arrowsClicked" aria-hidden="true"></i>
+                                          <div id="containerActors">
+                                         </div>
                                         </div> `;
         const CONTAINER_ACTORS = document.querySelector('#containerActors');
         movieData.credits.crew.forEach((actor, i) => {
@@ -103,3 +104,7 @@ SEARCH_BTN.addEventListener('click', () => {
 })
 
 console.log(JSON.parse(localStorage.getItem('favourite')));
+
+
+// <i class="fa fa-arrow-left arrowsClicked" aria-hidden="true"></i>
+//<i class="fa fa-arrow-right arrowsClicked" aria-hidden="true"></i>

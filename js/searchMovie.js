@@ -13,7 +13,7 @@ const FIRST_MOVIE_SEARCH = document.querySelector('#FIRSTmovieSEARCH');
 const MOVIE_BY_ID = document.querySelector('#movieByIdContainer');
 let favourite_movies = JSON.parse(localStorage.getItem('favourite')) || [];
 
-const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1 ,numMovieBiggerDisplay=0) => {
+const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1, numMovieBiggerDisplay = 0) => {
   fetch(`https://api.themoviedb.org/3/search/movie?query=${userSearch}&include_adult=false&language=en-US&page=${numpage}`, OPTIONS)
     .then((response) => response.json())
     .then((data) => {
@@ -48,10 +48,10 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1 ,numMovieBiggerDisplay=0) =>
                                                 <div>
                                                   <img src='http://image.tmdb.org/t/p/w500${firstMovie.poster_path}'>
                                                 </div>
-                                                <div id='likeRate'>
-                                                  <span id='rate'>Rate: ${firstMovie.vote_average} <i class="fa fa-star" aria-hidden="true"></i></span>
-                                                  <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
-                                                 
+                                                <div class='ContainerRateImdb' >
+                                                    <span class='imdbRate'>${firstMovie.vote_average} <i class="fa fa-imdb" aria-hidden="true"></i>
+                                                    </span>
+                                                    <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
                                                 </div>
                                               </div>
                                             </div>
@@ -79,7 +79,7 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1 ,numMovieBiggerDisplay=0) =>
         TRAILER_FETCH(firstId);
 
         data.results.forEach((movie, i) => {
-          if (i !=numMovieBiggerDisplay) {
+          if (i != numMovieBiggerDisplay) {
             const isLiked = favourite_movies.includes(movie.id);
             const likeButtonClass = isLiked ? 'userLiked' : '';
 
@@ -95,8 +95,8 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1 ,numMovieBiggerDisplay=0) =>
                                              </div>
                                            </div>`;
           }
-//  */ 
-//
+          //  */ 
+          //
         });
 
         const PAGINATION_BTN = document.querySelectorAll('.paginationBtn');
@@ -131,21 +131,21 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1 ,numMovieBiggerDisplay=0) =>
         MORE_MOVIES.addEventListener('click', () => {
           FETCH_MOVIE_SEARCH(ID_MOVIE_USER.value, ++numpage);
         });
-        const showMoreDitails=document.querySelectorAll('.showMoreDitails')
-        showMoreDitails.forEach((btn,i) => {
-            btn.addEventListener('click',()=>{
-              if (i>=numMovieBiggerDisplay) {
-                console.log(i);
-                FETCH_MOVIE_SEARCH(ID_MOVIE_USER.value, numpage, i+1)
-              }
-              else{
-                 FETCH_MOVIE_SEARCH(ID_MOVIE_USER.value, numpage, i)
-              }
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth"
+        const showMoreDitails = document.querySelectorAll('.showMoreDitails')
+        showMoreDitails.forEach((btn, i) => {
+          btn.addEventListener('click', () => {
+            if (i >= numMovieBiggerDisplay) {
+              console.log(i);
+              FETCH_MOVIE_SEARCH(ID_MOVIE_USER.value, numpage, i + 1)
+            }
+            else {
+              FETCH_MOVIE_SEARCH(ID_MOVIE_USER.value, numpage, i)
+            }
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
             });
-            })
+          })
         });
         PAGINATION_BTN.forEach((btn, i) => {
           btn.classList.remove('paginationBtnActive');

@@ -19,7 +19,8 @@ const FETCH_MOVIE_FIRST=(movie)=>{
                 const firstId = firstMovie.id;
                 const isLiked = favourite_movies.includes(firstId);
                 const likeButtonClass = isLiked ? 'userLiked' : '';
-                FAVORITE_FIRST.innerHTML+=`<div id='containerPage'>
+                FAVORITE_FIRST.innerHTML+=`
+                <div id='containerPage'>
                 <div id='containerMovie'>
                   <div id='containerContent'>
                     <div id='secContainerContent'>
@@ -37,15 +38,18 @@ const FETCH_MOVIE_FIRST=(movie)=>{
                     <div>
                       <img src='http://image.tmdb.org/t/p/w500${firstMovie.poster_path}'>
                     </div>
-                    <div id='likeRate'>
-                      <span id='rate'>Rate: ${firstMovie.vote_average} <i class="fa fa-star" aria-hidden="true"></i></span>
-                      <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
-                     
+                    <div class='ContainerRateImdb' >
+                        <span class='imdbRate'>${movie.vote_average} <i class="fa fa-imdb" aria-hidden="true"></i></span>
+                        <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
                     </div>
-                  </div>
+                  </div><div id="listMovieSearch"></div>
                 </div>
-                <div id="listMovieSearch"></div>
               </div>`
+              
+ 
+
+
+
             }
                 )
             .catch(err => console.error(err));
@@ -59,16 +63,17 @@ const FETCH_MOVIE = (idMovie) => {
             
             const isLiked = favourite_movies.includes(movie.id); 
             const likeButtonClass = isLiked ? 'userLiked' : '';
-            FAVORITE_CONTAINER.innerHTML += `<div class='movieCardList'>
-            <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}'> 
-            <div class='containerNameRateLike' >
-                <span class='idMovieContainer'> ${movie.title}</span>
-            <div class='ContainerRateImdb' >
-                <span class='imdbRate'>${movie.vote_average} <i class="fa fa-imdb" aria-hidden="true"></i>
-                </span>
-                <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
-            </div>
-            <button class='showMoreDitails'>Show More</button>
+            FAVORITE_CONTAINER.innerHTML += `
+            <div class='movieCardList'>
+                <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}'> 
+                <div class='containerNameRateLike' >
+                        <span class='idMovieContainer'> ${movie.title}</span>
+                    <div class='ContainerRateImdb' >
+                        <span class='imdbRate'>${movie.vote_average} <i class="fa fa-imdb" aria-hidden="true"></i></span>
+                    <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
+                    </div>
+                </div>
+                <button class='showMoreDitails'>Show More</button>
           </div>
           </div>`
  

@@ -19,10 +19,34 @@
     height: 30vh;
     margin-top: 3rem;
 }
-#titleContainer{
+#titleContainerBefore{
     border-radius: 10px;
-    background-color: #93d3e893;
+    background-color: #ffffff93;
     padding: 1rem;
+}
+#titleContainer{
+    padding-bottom: 1rem;
+    border-bottom: solid 0.1rem rgb(55, 134, 252);
+    height: fit-content;
+}
+#containerPage{
+    width: 85vw;
+}
+#listMovieSearch{
+    /* width: 100vw; */
+    /* height: 60vh; */
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+#mainConrainer{
+    display: flex;
+    justify-content: center;
 }
 #commit{
     padding: 1rem;
@@ -32,4 +56,40 @@
 }
 #yet{
     color: rgb(88, 138, 213);
+}
+#containerMovie{
+    background-color: rgba(95, 94, 92, 0.721);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    margin-top: 2rem;
+    height: 70vh;
+}
+#containerMovie img{
+    width: 18vw;
+    height: 50vh;
+    /* margin-right: 5rem;
+    margin-top: 2rem; */
+}
+#containerContent{
+   padding-left: 2rem;
+}
+#secContainerContent{
+    padding-bottom: 2rem;
+    margin-right: 2rem;
+}
+#titleContainer{
+    
+    border-bottom: solid 0.1rem rgb(55, 134, 252);
+    height: fit-content;
+}
+#paragrphContainer{
+    margin-top: 1rem;
+  }
+  #containerImgDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
 }
