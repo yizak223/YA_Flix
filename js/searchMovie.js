@@ -66,7 +66,7 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1, numMovieBiggerDisplay = 0) 
                                             </div>
                                           </div>`;
 
-        const LIST_MOVIE_SEARCH = document.querySelector('#listMovieSearch');
+       
         const TRAILER_FETCH = (movie_id) => {
           fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos?language=en-US`, OPTIONS)
             .then((response) => response.json())
@@ -77,7 +77,7 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1, numMovieBiggerDisplay = 0) 
         };
 
         TRAILER_FETCH(firstId);
-
+        const LIST_MOVIE_SEARCH = document.querySelector('#listMovieSearch');
         data.results.forEach((movie, i) => {
           if (i != numMovieBiggerDisplay) {
             const isLiked = favourite_movies.includes(movie.id);
@@ -95,8 +95,6 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1, numMovieBiggerDisplay = 0) 
                                              </div>
                                            </div>`;
           }
-          //  */ 
-          //
         });
 
         const PAGINATION_BTN = document.querySelectorAll('.paginationBtn');

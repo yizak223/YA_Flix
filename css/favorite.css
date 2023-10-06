@@ -59,13 +59,12 @@
 }
 #containerMovie{
     background-color: rgba(95, 94, 92, 0.721);
-    border-radius: 10px;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content: space-evenly;
     margin-top: 2rem;
-    height: 70vh;
-}
+    border-radius: 10px;
+} 
 #containerMovie img{
     width: 18vw;
     height: 50vh;

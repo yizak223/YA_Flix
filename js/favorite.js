@@ -45,13 +45,17 @@ const FETCH_MOVIE_FIRST=(movie)=>{
                   </div><div id="listMovieSearch"></div>
                 </div>
               </div>`
-              
- 
-
-
-
-            }
-                )
+              const TRAILER_FETCH = (movie_id) => {
+                fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos?language=en-US`, OPTIONS)
+                  .then((response) => response.json())
+                  .then((trailer) => {
+                    console.log(trailer);
+                    containerTrailer.innerHTML += ` <iframe width="550" height="315" src="https://www.youtube.com/embed/${trailer.results[0].key}" frameborder="0" allowfullscreen></iframe>`;
+                  });
+              };
+      
+              TRAILER_FETCH(firstId);
+            })
             .catch(err => console.error(err));
 
 }
