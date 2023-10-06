@@ -90,8 +90,9 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1, numMovieBiggerDisplay = 0) 
                                                 <div class='ContainerRateImdb' >
                                                   <span class='imdbRate'>${movie.vote_average} <i class="fa fa-imdb" aria-hidden="true"></i></span>
                                                   <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
+                                                  <button class='showMoreDitails'>Show More</button>
                                                 </div>
-                                                <button class='showMoreDitails'>Show More</button>
+                                          
                                              </div>
                                            </div>`;
           }
