@@ -289,10 +289,13 @@ form{
 .fa-imdb{
    
 }
-@media only screen and (max-width: 1000) {
-    
+#toggleButton{
+    display: none;
 }
 @media only screen and (max-width: 1000px) {
+    #toggleButton{
+        display: block;
+    }
     nav{ background-color: #000;
     display: flex;
     flex-direction: column;
