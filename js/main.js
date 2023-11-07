@@ -5,22 +5,66 @@ const OPTIONS = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNDMwZDdkNmE3NWVmMjUzYjE3MWQxMzE0ZTNiOGY4ZiIsInN1YiI6IjY1MTViNTEwOTNiZDY5MDEzOGZjNjFjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DnXvPBDGXfiOwqal9-lzl2zqjV-mLbJGJhCTg3gX7Vo'
   }
 };
-const MAIN_MOVIE=document.querySelector('#mainMovie')
+const MAIN_MOVIE = document.querySelector('#mainMovie')
 const MOVIE_LIST = document.querySelector('#moviesList')
-let favourite_movies = JSON.parse(localStorage.getItem('favourite')) || []; 
+const movieBiggerResults = document.querySelector('#movieBiggerResults')
+let favourite_movies = JSON.parse(localStorage.getItem('favourite')) || [];
 
 const FETCH_MOVIES = (numPage = 1, time = 'day') => {
   fetch(`https://api.themoviedb.org/3/trending/movie/${time}?language=en-US&page=${numPage}`, OPTIONS)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+     
       MOVIE_LIST.innerHTML = '';
 
-      data.results.forEach((movie) => {
+      data.results.forEach((movie, i) => {
         const isLiked = favourite_movies.includes(movie.id); // Check if the movie ID is liked
-        const likeButtonClass = isLiked ? 'userLiked' : '';
+          const likeButtonClass = isLiked ? 'userLiked' : '';
+          const firstMovie = data.results[0];
+          const firstId = firstMovie.id;
+        if (i == 0) {
+          
+    
+          movieBiggerResults.innerHTML = `<div id='containerPage'>
+          <div id='containerMovie'>
+            <div id='containerContent'>
+              <div id='secContainerContent'>
+                <div id='titleContainer'>
+                  <h1>${movie.title}</h1>
+                  <span>Published: ${movie.release_date}</span> | ID: ${movie.id}
+                </div>
+                <div id='paragrphContainer'></div>
+                <br>
+                <h6>${movie.overview}</h6>
+                <div id='containerTrailer'></div>
+              </div>
+            </div>
+            <div id='containerImgDetails'>
+              <div>
+                <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}'>
+              </div>
+              <div class='ContainerRateImdb' >
+                  <span class='imdbRate'>${movie.vote_average} <i class="fa fa-imdb" aria-hidden="true"></i>
+                  </span>
+                  <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
+              </div>
+            </div>
+          </div>
+        </div>`;
+        const TRAILER_FETCH = (movie_id) => {
+          fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos?language=en-US`, OPTIONS)
+            .then((response) => response.json())
+            .then((trailer) => {
+              console.log(trailer);
+              containerTrailer.innerHTML += ` <iframe width="550" height="315" src="https://www.youtube.com/embed/${trailer.results[0].key}" frameborder="0" allowfullscreen></iframe>`;
+            });
+        };
 
-        MOVIE_LIST.innerHTML += `
+        TRAILER_FETCH(firstId);
+        }
+        else{
+          MOVIE_LIST.innerHTML += `
         <div class='movieCardList'>
           <img src='http://image.tmdb.org/t/p/w500${movie.poster_path}'>
           <div class='containerNameRateLike' >
@@ -29,9 +73,12 @@ const FETCH_MOVIES = (numPage = 1, time = 'day') => {
                 <span class='imdbRate'>${movie.vote_average} <i class="fa fa-imdb" aria-hidden="true"></i>
                 </span>
                 <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
+                <button class='showMoreDitails'>Show More</button>
+
             </div>
           </div>
         </div>`;
+        }
       });
 
       const USER_LIKED = document.querySelectorAll('.likeBtn');

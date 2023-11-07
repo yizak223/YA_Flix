@@ -112,6 +112,50 @@ h1{
     margin-top: 1rem;
     color:rgb(55, 134, 252) ;
 }
+#movieBiggerResults{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    
+}
+#containerPage{
+    height: 100%;
+
+    width: 90vw;
+}
+#containerMovie {
+    background-color: rgba(95, 94, 92, 0.721);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#containerMovie img {
+    width: 18vw;
+    height: 50vh;
+}
+#containerContent {
+    width: 70%;
+}
+#secContainerContent {
+    padding-bottom: 2rem;
+    margin-right: 2rem;
+}
+#titleContainer {
+    padding-bottom: 1rem;
+    border-bottom: solid 0.1rem rgb(55, 134, 252);
+    height: fit-content;
+}
+#paragrphContainer {
+    margin-top: 1rem;
+}
+h6 {
+    font-size: 1rem;
+}
+#containerImgDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 #containerMovieListBtnPopularSelect{
     display: flex;
     flex-direction: column;
@@ -122,6 +166,7 @@ h1{
     /* display: flex; */
     padding-left: 2rem;
     color:rgb(55, 134, 252) ;
+    margin-top: 1.5rem;
 }
 #moviesList{
     /* width: 100vw; */
@@ -145,7 +190,7 @@ h1{
 }
 .movieCardList img{
     width: 15vw;
-    height: 30vh;
+    height: 45vh;
     border-radius: 0.5rem;
     box-shadow: rgb(255 255 255 / 10%) 12px 13px 25px -6px;
     

@@ -104,8 +104,11 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1, numMovieBiggerDisplay = 0) 
           BTN.addEventListener('click', () => {
             numPageUser = BTN.textContent;
             numpage = BTN.textContent;
-            console.log(numPageUser);
+            if (data.total_pages<numPageUser) {
+              alert('there is no page for this movie')
+            }
             FETCH_MOVIE_SEARCH(ID_MOVIE_USER.value, numPageUser);
+            
           });
         });
 
@@ -128,7 +131,11 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1, numMovieBiggerDisplay = 0) 
         const MORE_MOVIES = document.querySelector('#titleMoreMovies');
 
         MORE_MOVIES.addEventListener('click', () => {
+          if (data.total_pages<numpage) {
+            alert('there is no page for this movie')
+          }
           FETCH_MOVIE_SEARCH(ID_MOVIE_USER.value, ++numpage);
+
         });
         const showMoreDitails = document.querySelectorAll('.showMoreDitails')
         showMoreDitails.forEach((btn, i) => {
@@ -172,7 +179,9 @@ SEARCH_BTN.addEventListener('click', () => {
   FIRST_MOVIE_SEARCH.innerHTML = ``
   FETCH_MOVIE_SEARCH(ID_MOVIE_USER.value)
 })
+MOVIE_BY_ID.innerHTML = ``
+FIRST_MOVIE_SEARCH.innerHTML = ``
 
-
+FETCH_MOVIE_SEARCH('batman')
 
 
