@@ -51,3 +51,17 @@
     color: #fff;
     margin-bottom: 2rem;
 }
+@media only screen and (max-width: 1000px){
+    #containerMovie{
+        
+    }
+    #listMovieSearch{
+        flex-direction: column;
+    }
+    .movieCard img{
+        width: 70vw;
+    }
+    .movieCard{
+        width: 70vw;
+    }
+}
