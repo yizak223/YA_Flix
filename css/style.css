@@ -346,6 +346,7 @@ form{
 
     #toggleButton{
         display: block;
+        font-size: 30px;
         background-color: #000;
         color: #fff;
         border: none;
