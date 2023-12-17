@@ -10,7 +10,7 @@ const MOVIE_LIST = document.querySelector('#moviesList')
 const movieBiggerResults = document.querySelector('#movieBiggerResults')
 let favourite_movies = JSON.parse(localStorage.getItem('favourite')) || [];
 
-const FETCH_MOVIES = (numPage = 1, time = 'day') => {
+const FETCH_MOVIES = (numPage = 1, time = 'day', numMovieBiggerDisplay=0) => {
   fetch(`https://api.themoviedb.org/3/trending/movie/${time}?language=en-US&page=${numPage}`, OPTIONS)
     .then((response) => response.json())
     .then((data) => {
@@ -21,18 +21,16 @@ const FETCH_MOVIES = (numPage = 1, time = 'day') => {
       data.results.forEach((movie, i) => {
         const isLiked = favourite_movies.includes(movie.id); // Check if the movie ID is liked
           const likeButtonClass = isLiked ? 'userLiked' : '';
-          const firstMovie = data.results[0];
+          const firstMovie = data.results[numMovieBiggerDisplay];
           const firstId = firstMovie.id;
-        if (i == 0) {
-          
-    
+        if (i == numMovieBiggerDisplay) {
           movieBiggerResults.innerHTML = `<div id='containerPage'>
           <div id='containerMovie'>
             <div id='containerContent'>
               <div id='secContainerContent'>
                 <div id='titleContainer'>
                   <h1>${movie.title}</h1>
-                  <span>Published: ${movie.release_date}</span> | ID: ${movie.id}
+                  <span id='spanDetails'>Published: ${movie.release_date} | ID: ${movie.id}</span> 
                 </div>
                 <div id='paragrphContainer'></div>
                 <br>
@@ -94,6 +92,22 @@ const FETCH_MOVIES = (numPage = 1, time = 'day') => {
           }
           localStorage.setItem('favourite', JSON.stringify(favourite_movies));
         });
+      });
+      const showMoreDitails = document.querySelectorAll('.showMoreDitails')
+      showMoreDitails.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+          if (i >= numMovieBiggerDisplay) {
+            console.log(i);
+            FETCH_MOVIES(numPageUser, paginationUser, i + 1)
+          }
+          else {
+            FETCH_MOVIES(numPageUser, paginationUser, i)
+          }
+          window.scrollTo({
+            top: targetElementPosition - 50,
+            behavior: "smooth"
+          });
+        })
       });
     })
     .catch((err) => console.error(err));

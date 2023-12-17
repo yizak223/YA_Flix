@@ -153,7 +153,7 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1, numMovieBiggerDisplay = 0) 
             });
           })
         });
-        PAGINATION_BTN.forEach((btn, i) => {
+        PAGINATION_BTN.forEach((btn) => {
           btn.classList.remove('paginationBtnActive');
         });
 
@@ -179,9 +179,6 @@ SEARCH_BTN.addEventListener('click', () => {
   FIRST_MOVIE_SEARCH.innerHTML = ``
   FETCH_MOVIE_SEARCH(ID_MOVIE_USER.value)
 })
-MOVIE_BY_ID.innerHTML = ``
-FIRST_MOVIE_SEARCH.innerHTML = ``
 
-FETCH_MOVIE_SEARCH('batman')
 
 
