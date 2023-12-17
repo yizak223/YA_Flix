@@ -82,5 +82,17 @@ iframe{
     color: rgb(55, 134, 252);
 }
 
+@media only screen and (max-width: 1000px){
+    iframe{
+        width: 70vw;
+        height: unset;
+    }
+    .cardActor{
+        width: 40vw;
+    }
+    .containerImg{
+        width: 40vw;
+    }
+}
 
 

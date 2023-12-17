@@ -160,3 +160,29 @@
     bottom: 0;
     width: 100vw;
 } */
+
+@media only screen and (max-width: 1000px){
+    #idMovieUser{
+        width: 60vw;
+    }
+    #searchBTN{
+        width: unset;
+    }
+    #backgImg{
+        display: none;
+    }
+    #containerMovie{
+        flex-direction: column;
+    }
+    #containerMovie img{
+        width: 70vw;
+    }
+    #containerPage{
+        overflow-y: unset;
+        overflow-x: hidden;
+        width: 99%;
+    }
+    #secContainerContent{
+        margin-right: 0;
+    }
+}
