@@ -97,3 +97,18 @@ footer{
     background-color: rgb(117, 118, 118);
     margin-top: auto;
 } */
+
+@media only screen and (max-width: 1000px){
+    article{
+        margin-top: 0;
+        flex-direction: column;
+        width: 99vw;
+    }
+    #mainImg{
+        width: 100%;
+    }
+    #socialMedia{
+        font-size: 8vh;
+        margin-bottom: 2rem;
+    }
+}
