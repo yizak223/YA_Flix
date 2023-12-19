@@ -73,9 +73,6 @@ h4{
     border-radius: 10px;
     background-color: rgba(227, 227, 222, 0.446);
 }
-.secImg {
-
-}
 #secPargraph{
     display: flex;
     justify-content: space-between;
@@ -83,20 +80,8 @@ h4{
 #mainImg{
     height: 50vh;
     border-radius: 15px;
-    /* width: 30vw */
 }
-/* .logoImg{
-    width: 6vw;
-    height: 7vh;  
-} */
-/* body{
-    min-height: 100vh;
-}
-footer{
-    display: flex;
-    background-color: rgb(117, 118, 118);
-    margin-top: auto;
-} */
+
 
 @media only screen and (max-width: 1000px){
     article{

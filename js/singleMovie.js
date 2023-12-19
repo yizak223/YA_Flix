@@ -104,7 +104,3 @@ SEARCH_BTN.addEventListener('click', () => {
 })
 
 console.log(JSON.parse(localStorage.getItem('favourite')));
-
-
-// <i class="fa fa-arrow-left arrowsClicked" aria-hidden="true"></i>
-//<i class="fa fa-arrow-right arrowsClicked" aria-hidden="true"></i>

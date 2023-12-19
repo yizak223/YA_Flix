@@ -32,9 +32,6 @@
     gap: 1rem;
 }
 #listMovieSearch{
-    /* width: 100vw; */
-    /* height: 60vh; */
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -52,9 +49,6 @@
     margin-bottom: 2rem;
 }
 @media only screen and (max-width: 1000px){
-    #containerMovie{
-        
-    }
     #listMovieSearch{
         flex-direction: column;
     }

@@ -15,9 +15,7 @@ const FETCH_MOVIES = (numPage = 1, time = 'day', numMovieBiggerDisplay=0) => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-     
       MOVIE_LIST.innerHTML = '';
-
       data.results.forEach((movie, i) => {
         const isLiked = favourite_movies.includes(movie.id); // Check if the movie ID is liked
           const likeButtonClass = isLiked ? 'userLiked' : '';
@@ -58,7 +56,6 @@ const FETCH_MOVIES = (numPage = 1, time = 'day', numMovieBiggerDisplay=0) => {
               containerTrailer.innerHTML += ` <iframe width="550" height="315" src="https://www.youtube.com/embed/${trailer.results[0].key}" frameborder="0" allowfullscreen></iframe>`;
             });
         };
-
         TRAILER_FETCH(firstId);
         }
         else{
@@ -72,13 +69,11 @@ const FETCH_MOVIES = (numPage = 1, time = 'day', numMovieBiggerDisplay=0) => {
                 </span>
                 <button class='likeBtn ${likeButtonClass}'> <i class="fa fa-thumbs-up" aria-hidden="true"></i> like</button>
                 <button class='showMoreDitails'>Show More</button>
-
             </div>
           </div>
         </div>`;
         }
       });
-
       const USER_LIKED = document.querySelectorAll('.likeBtn');
       USER_LIKED.forEach((btn, i) => {
         btn.addEventListener('click', () => {
@@ -112,8 +107,6 @@ const FETCH_MOVIES = (numPage = 1, time = 'day', numMovieBiggerDisplay=0) => {
     })
     .catch((err) => console.error(err));
 };
-
-
 // console.log(localStorage.getItem('favourite'));
 console.log(JSON.parse(localStorage.getItem('favourite')));
 // localStorage.clear();
@@ -135,12 +128,8 @@ PAGINTION_BTN.forEach(BTN => {
   })
 });
 
-
-
 const SET_DAY = document.querySelector('#setDay')
 const SET_WEEK = document.querySelector('#setWeek')
-
-
 
 SET_DAY.addEventListener('click', () => {
   SET_DAY.classList.add('clickdBTNpopularActive')
@@ -152,7 +141,6 @@ SET_DAY.addEventListener('click', () => {
     btn.classList.remove('paginationBtnActive');
   })
   PAGINTION_BTN[numPageUser - 1].classList.add('paginationBtnActive')
-
 })
 
 SET_WEEK.addEventListener('click', () => {

@@ -1,4 +1,3 @@
-
 const OPTIONS = {
   method: 'GET',
   headers: {
@@ -6,7 +5,6 @@ const OPTIONS = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNDMwZDdkNmE3NWVmMjUzYjE3MWQxMzE0ZTNiOGY4ZiIsInN1YiI6IjY1MTViNTEwOTNiZDY5MDEzOGZjNjFjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DnXvPBDGXfiOwqal9-lzl2zqjV-mLbJGJhCTg3gX7Vo'
   }
 };
-
 
 const BKG_IMG = document.querySelector('#backgImgContainer');
 const FIRST_MOVIE_SEARCH = document.querySelector('#FIRSTmovieSEARCH');
@@ -99,7 +97,6 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1, numMovieBiggerDisplay = 0) 
         });
 
         const PAGINATION_BTN = document.querySelectorAll('.paginationBtn');
-
         PAGINATION_BTN.forEach((BTN) => {
           BTN.addEventListener('click', () => {
             numPageUser = BTN.textContent;
@@ -107,13 +104,11 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1, numMovieBiggerDisplay = 0) 
             if (data.total_pages<numPageUser) {
               alert('there is no page for this movie')
             }
-            FETCH_MOVIE_SEARCH(ID_MOVIE_USER.value, numPageUser);
-            
+            FETCH_MOVIE_SEARCH(ID_MOVIE_USER.value, numPageUser); 
           });
         });
 
         const USER_LIKED = document.querySelectorAll('.likeBtn');
-
         USER_LIKED.forEach((btn, i) => {
           btn.addEventListener('click', () => {
             btn.classList.toggle('userLiked');
@@ -129,13 +124,11 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1, numMovieBiggerDisplay = 0) 
         });
 
         const MORE_MOVIES = document.querySelector('#titleMoreMovies');
-
         MORE_MOVIES.addEventListener('click', () => {
           if (data.total_pages<numpage) {
             alert('there is no page for this movie')
           }
           FETCH_MOVIE_SEARCH(ID_MOVIE_USER.value, ++numpage);
-
         });
         const showMoreDitails = document.querySelectorAll('.showMoreDitails')
         showMoreDitails.forEach((btn, i) => {
@@ -162,18 +155,10 @@ const FETCH_MOVIE_SEARCH = (userSearch, numpage = 1, numMovieBiggerDisplay = 0) 
     })
     .catch((err) => console.error(err));
 };
-
-
-
 console.log(JSON.parse(localStorage.getItem('favourite')));
-
-
-
-
 
 const SEARCH_BTN = document.querySelector('#searchBTN')
 const ID_MOVIE_USER = document.querySelector('#idMovieUser')
-
 SEARCH_BTN.addEventListener('click', () => {
   MOVIE_BY_ID.innerHTML = ``
   FIRST_MOVIE_SEARCH.innerHTML = ``

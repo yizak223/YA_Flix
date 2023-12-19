@@ -7,14 +7,7 @@ body{
     'main main main main'
     'footer footer footer footer';
     line-height: normal;
-    /* width: 100vw; */
-  
     color: #fff;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
-    /* gap: 2vh;
-    margin: 0; */
     background-color: rgb(0, 0, 0);
     margin: 0;
 }
@@ -23,7 +16,6 @@ header{
     background-color: rgba(0, 0, 0, 0.544);
     position: sticky;
     top:  0;
-
 }
 .active{
     color: #fff;
@@ -38,7 +30,6 @@ nav{
 a{
     text-decoration: none;
     color: rgb(184, 184, 184);
-    
 }
 a:hover{
     transition: 0.5s;
@@ -57,19 +48,14 @@ ul{
 main{
     grid-area: main;
 }
-/*https://img.lovepik.com/background/20211022/medium/lovepik-film-background-board-film-background-image_500877889.jpg*/
-/*  https://img.mako.co.il/2018/04/15/shutterstock15_04_18540015799_i.jpg*/
 section{
     background-image: url('https://wallpapers-hub.art/wallpaper-images/48083.jpg') ;  
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
-    height: 95vh;
-  
-    
+    height: 95vh;  
 }
 #welcomeContainer{
-    
     margin-top: 5rem;
     margin-left: 5rem;
     /* width: 100vw; */
@@ -88,7 +74,6 @@ h1{
 .otherColor{
     color: rgb(55, 134, 252);
 }
-
 #btnSpace {
     margin-left: 5rem;
     --width: 150px;
@@ -163,15 +148,11 @@ h6 {
     padding-top: 0;
 }
 .btnPopularSelct{
-    /* display: flex; */
     padding-left: 2rem;
     color:rgb(55, 134, 252) ;
     margin-top: 1.5rem;
 }
 #moviesList{
-    /* width: 100vw; */
-    /* height: 60vh; */
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -192,10 +173,8 @@ h6 {
     width: 15vw;
     height: 45vh;
     border-radius: 0.5rem;
-    box-shadow: rgb(255 255 255 / 10%) 12px 13px 25px -6px;
-    
+    box-shadow: rgb(255 255 255 / 10%) 12px 13px 25px -6px;  
 }
-
 .movieCardList{
     width: 15vw;
     display: flex;
@@ -331,9 +310,6 @@ form{
     align-items: stretch;
     justify-content: stretch;
 }
-.fa-imdb{
-   
-}
 #toggleButton{
     display: none;
 }
@@ -352,7 +328,7 @@ form{
         border: none;
     }
     nav{
-         background-color: #000;
+    background-color: #000;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -366,12 +342,9 @@ form{
          border-radius: 50px;
     }
     section{
-        display: none;
+        /* display: none; */
         background-size: 90% 90% 90%;
         background-position: center;
-    }
-    #movieBiggerResults{
-       /* display: none; */
     }
     h1{
         font-size: 50px;
@@ -380,20 +353,16 @@ form{
         font-size: 10px;
     }
     iframe{
-        width: 300px ;
-     
+        width: 300px ; 
     }
     #secContainerContent{
         margin: 0;
-
     } 
     #containerMovie{
         flex-direction: column;
         align-items: center;
         border-radius: 50px;
-        background-color: #37373767;
-      
-       
+        background-color: #37373767;  
     }
     #moviesList{
         flex-direction: row;
