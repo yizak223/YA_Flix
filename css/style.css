@@ -343,8 +343,12 @@ form{
     }
     section{
         /* display: none; */
-        background-size: 90% 90% 90%;
-        background-position: center;
+        background-image: url('https://www.yo-yoo.co.il/wallp/images/uploads/0132f5.jpg');
+        /* background-size: 90% 90% 90%;
+        background-position: center; */
+    }
+    #welcomeTitle{
+        width: 60vw;
     }
     h1{
         font-size: 50px;
