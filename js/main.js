@@ -107,9 +107,8 @@ const FETCH_MOVIES = (numPage = 1, time = 'day', numMovieBiggerDisplay=0) => {
     })
     .catch((err) => console.error(err));
 };
-// console.log(localStorage.getItem('favourite'));
+
 console.log(JSON.parse(localStorage.getItem('favourite')));
-// localStorage.clear();
 
 FETCH_MOVIES()
 const PAGINTION_BTN = document.querySelectorAll('.paginationBtn')
@@ -164,5 +163,4 @@ BTN_SPACE.addEventListener('click', function () {
     behavior: 'smooth'
   })
 })
-
 

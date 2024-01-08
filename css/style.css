@@ -251,10 +251,12 @@ form{
     transition: 0.5s;
     cursor: pointer;
 }
-.likeBtn:hover , .showMoreDitails:hover{
-    background-color: rgb(255, 255, 255);
-    color: rgb(55, 134, 252);
-}
+@media (min-width: 1000px) {
+    .likeBtn:hover , .showMoreDitails:hover{
+        background-color: rgb(255, 255, 255);
+        color: rgb(55, 134, 252);
+    } 
+  }
 .userLiked{
     background-color: rgb(55, 134, 252);
     color: rgb(255, 0, 0);
@@ -318,6 +320,9 @@ form{
     }
 } */
 @media only screen and (max-width: 1000px) {
+    .likeBtn:hover {
+       
+    }
     .companyName{
         margin-right: 0.5rem;
         color: rgb(55, 134, 252);
