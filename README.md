@@ -14,6 +14,16 @@ and use local storage to save your favourite movies</p>
     <li><b>Favourite: </b>save your favourite movies that you can always come back and see them again</li>
 </ul>
 
+<h1>Technologies Used</h1>
+  <h3>Front-End</h3>
+    <li>Html, Css</li>
+    <li>Java script</li>
+  <h3>DB</h3>
+    <li>Local storage</li>
+  <h3>API</h3>
+    <li><a href='https://developer.themoviedb.org/docs/getting-started'>TMDB</a></li>
+
+
 
 <h1> Deployment</h1>
 <p>The app is also deployment readily available <a href='https://yizak223.github.io/YA_Flix/html/index.html'>here</a></p>
